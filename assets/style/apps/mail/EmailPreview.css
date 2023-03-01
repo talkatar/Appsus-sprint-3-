@@ -1,0 +1,22 @@
+.email-from {
+   width: 120px;
+}
+
+.content {
+    flex-grow: 1;
+    width: 0;
+}
+
+.email-subject {
+    /* width:100px; */
+    
+}
+
+.email-body {
+    color: #5f6368;
+    font-family: Roboto-Regular;
+    font-weight: lighter;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

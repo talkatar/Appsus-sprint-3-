@@ -60,17 +60,20 @@ function _createEmails() {
 
         emails = [ {
             id: 'e101',
-            subject: 'yotube!',
-            body: 'Would love to catch up sometimes',
-            isRead: false,
-            sentAt : 1551133930594,
+            nameSender:'Amazon Business',
+            subject: 'Tal, save even more with a free Amazon Business account!',
+            body: 'you are receiving this email because you have a business-issued credit card in your Amazon account',
+            isRead: true,
+            sentAt : '',
             removedAt : null,
             from: 'momo@momo.com',
-            to: 'user@appsus.com'
+            to: 'user@appsus.com',
+           
             },
             {
                 id: 'e102',
-                subject: 'google!',
+                nameSender:'The Google Account',
+                subject: 'GitGuardian has detected the following Google API Key exposed within your GitHub account.' ,
                 body: 'Would love to catch up sometimes',
                 isRead: false,
                 sentAt : 1551133930594,
@@ -80,14 +83,27 @@ function _createEmails() {
                 }
             , {
                 id: 'e103',
-                subject: 'amazon!',
-                body: 'Would love to catch up sometimes',
+                nameSender:'LinkedIn Job Alerts',
+                subject: ' Explore jobs similar to your job alert',
+                body: 'No matching jobs for: operations project manager in Herzliya, Tel Aviv District, Israel today',
                 isRead: false,
                 sentAt : 1551133930594,
                 removedAt : null,
                 from: 'momo@momo.com',
                 to: 'user@appsus.com'
-                }]
+                },
+            
+                {
+                    id: 'e104',
+                    nameSender:'eBay',
+                    subject: ' Sound like a good idea? All you have to do is go to eBay',
+                    body: 'Keeping your personal info up to date can help better protect your account',
+                    isRead: false,
+                    sentAt : 1551133930594,
+                    removedAt : null,
+                    from: 'momo@momo.com',
+                    to: 'user@appsus.com'
+                    }]
 
         utilService.saveToStorage(EMAIL_KEY, emails)
     }

@@ -2,6 +2,8 @@
 import { emailService } from '../services/email.service.js'
 import EmailList from '../cmps/EmailList.js'
 import EmailFilter from '../cmps/EmailFilter.js'
+import EmailFolderList from '../cmps/EmailFolderList.js'
+import EmailCompose from '../cmps/EmailCompose.js'
 
 
 
@@ -10,12 +12,15 @@ export default{
         <div>emails</div>
 
         <EmailFilter @filter="setFilterBy"/>
-        <EmailList 
-                :emails=this.emails
-                v-if="emails"
-                 />
+        <RouterLink to="/email/compose">Compose</RouterLink>  
 
-                 <!-- @remove="removeEmail"  -->
+        <EmailFolderList @filter="setFilterBy"/>
+
+        <EmailList :emails="filteredEmails" v-if="emails"/>
+        <RouterView/>
+                 <!-- :emails=this.emails -->
+
+
 
 
 
@@ -33,6 +38,7 @@ export default{
         .then(emails => {
             console.log(emails);
             this.emails = emails
+            console.log(emails);
         })
 
 },
@@ -46,11 +52,31 @@ methods: {
     }
 },
 
+computed: {
+    filteredEmails() {
+        // if (!this.filterBy.price) {
+        //     this.filterBy.title = ''
+        //     this.filterBy.price = 200
+        // }
+        const regex = new RegExp(this.filterBy.title, 'i')
+        console.log(  regex);
+        return this.emails.filter(email => 
+            regex.test(email.subject)||regex.test(email.body)
+        
+               )
+               
+    },
+
+  
+},
+
    
 
 components: {
     EmailList,
     EmailFilter,
+    EmailFolderList,
+    EmailCompose,
 
 }
 }

@@ -5,7 +5,12 @@ import NoteTodos from '../cmps/NoteTodos.js'
 export default {
     props: ['note'],
     template: `
-        <component :is="cmp.type" :info="cmp.info" />
+        <div class="note" :note="note">
+            <component :is="cmp.type" :info="cmp.info" />
+            <button @click="deleteNote()">delete</button>
+            <RouterLink :to="'/keep/'+note.id">Edit</RouterLink>
+            <!-- <button @click="openEditor()">edit</button> -->
+        </div>
     `,
     data() {
         return {
@@ -18,10 +23,15 @@ export default {
     created() {
         this.cmp.type = this.note.type
         this.cmp.info = this.note.info
-        console.log(this.note)
     },
     methods: {
-
+        deleteNote() {
+            let noteId = this.note.id
+            this.$emit('remove', noteId)
+        },
+        openEditor() {
+            console.log('hi')
+        }
     },
     components: {
         NoteText,

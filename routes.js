@@ -18,25 +18,6 @@ const routerOptions = {
 			path: '/about',
 			component: AboutUs,
 		},
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 		{
 			path: '/keep',
 			component: NoteIndex,

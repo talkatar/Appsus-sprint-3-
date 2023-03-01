@@ -12,7 +12,7 @@ export const emailService = {
     get,
     remove,
     save,
-    getEmptyEmail,
+    // getEmptyEmail,
     // addReview,
     // removeReview,
     // addGoogleEmail
@@ -22,13 +22,13 @@ function query(filterBy = {}) {
     return storageService.query(EMAIL_KEY)
         .then(emails => {
             console.log(emails);
-            if (filterBy.txt) {
-                const regex = new RegExp(filterBy.txt, 'i')
-                emails = emails.filter(email => regex.test(email.vendor))
-            }
-            if (filterBy.minSpeed) {
-                emails = emails.filter(email => email.maxSpeed >= filterBy.minSpeed)
-            }
+            // if (filterBy.txt) {
+            //     const regex = new RegExp(filterBy.txt, 'i')
+            //     emails = emails.filter(email => regex.test(email.vendor))
+            // }
+            // if (filterBy.minSpeed) {
+            //     emails = emails.filter(email => email.maxSpeed >= filterBy.minSpeed)
+            // }
             return emails
         })
 }
@@ -36,7 +36,7 @@ function query(filterBy = {}) {
 
 function get(emailId) {
     return storageService.get(EMAIL_KEY, emailId)
-    .then(_setNextPrevEmailId)
+    // .then(_setNextPrevEmailId)
 }
 
 function remove(emailId) {
@@ -52,30 +52,7 @@ function save(email) {
     }
 }
 
-function getEmptyEmail(title, amount) {
-    return{
-        id: '',
-        title,
-        subtitle: "mi est eros convallis auctor arcu dapibus himenaeos",
-        authors: [
-          "Barbara Cartland"
-        ],
-        publishedDate: 1999,
-        description: "placerat nisi sodales suscipit tellus tincidunt mauris elit sit luctus interdum ad dictum platea vehicula conubia fermentum habitasse congue suspendisse",
-        pageCount: 713,
-        categories: [
-          'Computers',
-          'Hack'
-        ],
-        thumbnail: "http://coding-academy.org/emails-photos/20.jpg",
-        language: "en",
-        listPrice: {
-          amount,
-          currencyCode: "EUR",
-          isOnSale: false
-        }
-      }
-}
+
 
 function _createEmails() {
     let emails = utilService.loadFromStorage(EMAIL_KEY)
@@ -83,7 +60,7 @@ function _createEmails() {
 
         emails = [ {
             id: 'e101',
-            subject: 'Miss you!',
+            subject: 'yotube!',
             body: 'Would love to catch up sometimes',
             isRead: false,
             sentAt : 1551133930594,
@@ -92,8 +69,8 @@ function _createEmails() {
             to: 'user@appsus.com'
             },
             {
-                id: 'e101',
-                subject: 'Miss you!',
+                id: 'e102',
+                subject: 'google!',
                 body: 'Would love to catch up sometimes',
                 isRead: false,
                 sentAt : 1551133930594,
@@ -102,8 +79,8 @@ function _createEmails() {
                 to: 'user@appsus.com'
                 }
             , {
-                id: 'e101',
-                subject: 'Miss you!',
+                id: 'e103',
+                subject: 'amazon!',
                 body: 'Would love to catch up sometimes',
                 isRead: false,
                 sentAt : 1551133930594,
@@ -116,6 +93,33 @@ function _createEmails() {
     }
 }
 
+
+
+
+// function getEmptyEmail(title, amount) {
+//     return{
+//         id: '',
+//         title,
+//         subtitle: "mi est eros convallis auctor arcu dapibus himenaeos",
+//         authors: [
+//           "Barbara Cartland"
+//         ],
+//         publishedDate: 1999,
+//         description: "placerat nisi sodales suscipit tellus tincidunt mauris elit sit luctus interdum ad dictum platea vehicula conubia fermentum habitasse congue suspendisse",
+//         pageCount: 713,
+//         categories: [
+//           'Computers',
+//           'Hack'
+//         ],
+//         thumbnail: "http://coding-academy.org/emails-photos/20.jpg",
+//         language: "en",
+//         listPrice: {
+//           amount,
+//           currencyCode: "EUR",
+//           isOnSale: false
+//         }
+//       }
+// }
 
 
 // function addReview(emailId,review){

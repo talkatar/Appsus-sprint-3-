@@ -1,6 +1,7 @@
 
 import { emailService } from '../services/email.service.js'
 import EmailList from '../cmps/EmailList.js'
+import EmailFilter from '../cmps/EmailFilter.js'
 
 
 
@@ -8,11 +9,13 @@ export default{
     template: `
         <div>emails</div>
 
+        <EmailFilter @filter="setFilterBy"/>
         <EmailList 
                 :emails=this.emails
-              
+                v-if="emails"
                  />
 
+                 <!-- @remove="removeEmail"  -->
 
 
 
@@ -21,6 +24,7 @@ export default{
 ,data() {
     return {
         emails: null,
+        filterBy: {},
     }
 }
 
@@ -32,10 +36,21 @@ export default{
         })
 
 },
+
+methods: {
+
+  
+    setFilterBy(filterBy) {
+        console.log(filterBy);
+        this.filterBy = filterBy
+    }
+},
+
    
 
 components: {
     EmailList,
+    EmailFilter,
 
 }
 }

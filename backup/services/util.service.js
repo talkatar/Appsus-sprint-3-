@@ -2,19 +2,10 @@ export const utilService = {
     makeId,
     makeLorem,
     getRandomIntInclusive,
-    // saveToStorage,
-    // loadFromStorage,
+    saveToStorage,
+    loadFromStorage,
 }
 
-
-function saveToStorage(key, value) {
-    localStorage.setItem(key, JSON.stringify(value))
-}
-
-function loadFromStorage(key) {
-    const data = localStorage.getItem(key)
-    return (data) ? JSON.parse(data) : undefined
-}
 
 function makeId(length = 5) {
     var txt = ''
@@ -41,11 +32,11 @@ function getRandomIntInclusive(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min //The maximum is inclusive and the minimum is inclusive 
 }
 
-// function saveToStorage(key, value) {
-//     localStorage.setItem(key, JSON.stringify(value))
-// }
+function saveToStorage(key, value) {
+    localStorage.setItem(key, JSON.stringify(value))
+}
 
-// function loadFromStorage(key) {
-//     const data = localStorage.getItem(key)
-//     return (data) ? JSON.parse(data) : undefined
-// }
+function loadFromStorage(key) {
+    const data = localStorage.getItem(key)
+    return (data) ? JSON.parse(data) : undefined
+}

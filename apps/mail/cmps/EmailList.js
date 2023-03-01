@@ -6,9 +6,9 @@ export default {
     template: `
         <section class="email-list">
             <ul>
-                <li v-for="email in emails" :key="email.id">
-                    <EmailPreview :email="email"/>
-                    <RouterLink :to="'/email/'+email.id">Details</RouterLink>  |
+                <li :class="[email.isRead ? 'read' : 'unread']" v-for="email in emails" :key="email.id">
+                  
+                    <RouterLink :to="'/email/'+email.id"><EmailPreview :email="email"/></RouterLink>  
                     <!-- <RouterLink :to="'/email/edit/'+email.id">Edit</RouterLink> |  -->
                 </li>
             </ul>
@@ -18,12 +18,28 @@ export default {
         remove(emailId) {
             this.$emit('remove', emailId)
         },
+
+
+      
         // showDetails(emailId){
         //     this.$emit('show-details', emailId)
         // },
     },
+
+    computed:{
+       
+    }
+
+    ,created(){
+
+    }
+
+
+,
     components: {
         EmailPreview,
         EmailDetails,
     }
 }
+
+

@@ -1,0 +1,9 @@
+.note-container {
+    columns: 3;
+    margin-block-start: 2vh;
+    margin-inline: 2vw;
+}
+
+.note-container img {
+    width: 100%;
+}

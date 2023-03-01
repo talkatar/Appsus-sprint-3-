@@ -1,0 +1,7 @@
+.note {
+    break-inside: avoid;
+    text-align: center;
+    background-color: var(--clr3);
+    padding-inline: 1vw;
+    padding-block: 0.2vh;
+}

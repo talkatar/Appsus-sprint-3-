@@ -77,7 +77,7 @@ function _createNotes() {
                 id: 'n102', 
                 type: 'NoteImg', 
                 isPinned: false, 
-                info: { url: 'http://some-img/me', title: 'Bobi and Me' }, 
+                info: { url: '../../../assets/img/pexels-eberhard-grossgasteiger-572897.jpg', title: 'Bobi and Me' }, 
                 style: { backgroundColor: '#00d' } 
             }, 
             { 

@@ -1,8 +1,21 @@
+import { noteService } from "../services/note.service.js"
+
+import NoteList from '../cmps/NoteList.js'
+
 export default{
     template: `
-        <div>notes</div>
-    `
-
-
-    
+        <NoteList :notes="notes"/>
+    `,
+    data() {
+        return {
+            notes: null
+        }
+    },
+    created() {
+        noteService.query()
+                    .then(notes => this.notes = notes)
+    },
+    components: {
+        NoteList
+    }
 }

@@ -1,14 +1,15 @@
 import { noteService } from "../services/note.service.js"
 
 import NoteList from '../cmps/NoteList.js'
+import NoteDetails from './NoteDetails.js'
 
 export default{
     template: `
-        <NoteList :notes="notes" @remove="deleteNote"/>
+        <NoteList :notes="notes" @remove="deleteNote" @noteAdd="addNote"/>
     `,
     data() {
         return {
-            notes: null
+            notes: null,
         }
     },
     methods: {
@@ -22,6 +23,16 @@ export default{
                             console.log(this.notes)
                         })
                         .catch(err => {console.log('error')})
+        },
+        addNote(newNote) {
+            // console.log(newNote)
+            newNote.id = null
+            noteService.save(newNote)
+                        .then(() => {
+                             noteService.query()
+                            .then(notes => this.notes = notes)
+                        })
+           
         }
     },
     created() {
@@ -29,6 +40,7 @@ export default{
                     .then(notes => this.notes = notes)
     },
     components: {
-        NoteList
+        NoteList,
+        NoteDetails
     }
 }

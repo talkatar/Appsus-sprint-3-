@@ -12,7 +12,7 @@ export const noteService = {
     get,
     remove,
     save,
-    // getEmptyNote,
+    getEmptyNote,
 }
 
 function query(filterBy = {}) {
@@ -57,9 +57,9 @@ function save(note) {
 //   })
 // }
 
-// function getEmptyNote(title = '', description = '', listPrice) {
-//     return { id: '', title, description, listPrice }
-// }
+function getEmptyNote(id= '',createdAT = Date.now(),type = '', isPinned = false, info = {}, style = {}) {
+    return { id: '',createdAT: Date.now(), type: '', isPinned: false, info: {}, style: {} }
+}
 
 function _createNotes() {
     let notes = utilService.loadFromStorage(NOTE_KEY)

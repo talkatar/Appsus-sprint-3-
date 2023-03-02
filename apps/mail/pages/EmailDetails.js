@@ -22,10 +22,6 @@ export default {
             <p></p>
           <div class="email-body-details">{{email.body}}</div>
           
-          
-
-
-
             <nav>
             <!-- <RouterLink :to="'/email/' + email.prevEmailId">Previous Email</RouterLink> |
             <RouterLink :to="'/email/' + email.nextEmailId">Next Email</RouterLink> -->

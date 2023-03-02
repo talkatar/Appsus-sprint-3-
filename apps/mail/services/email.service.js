@@ -130,25 +130,26 @@ function _createEmails() {
                     from: 'user@appsus.com',
                     to: 'user11@appsus.com',
                     isStared:false,
-                    isDraft:true,
+                    isDraft:false,
                     
                     }
 
 
                     ,{
                         id: 'e106',
-                        nameSender:'eBay',
-                        subject: ' Sound like a good idea? All you have to do is go to eBay',
-                        body: 'Keeping your personal info up to date can help better protect your account',
-                        isRead: true,
-                        sentAt : 1234133930594,
+                        nameSender:'LinkedIn Job Alerts',
+                        subject: ' Explore jobs similar to your job alert',
+                        body: 'No matching jobs for: operations project manager in Herzliya, Tel Aviv District, Israel today',
+                        isRead: false,
+                        sentAt : 1521133930594,
                         removedAt : null,
                         from: 'user@appsus.com',
-                        to: 'user11@appsus.com',
-                        isStared:false,
-                        isDraft:false,
-                        
+                        to: 'LinkedIn@LinkedIn.com',
+                        isStared:true,
+                        isDraft:true,
+        
                         }
+
                         ,{
                             id: 'e107',
                             nameSender:'eBay',
@@ -157,7 +158,7 @@ function _createEmails() {
                             isRead: true,
                             sentAt : 1235133930594,
                             removedAt : null,
-                            from: 'user@appsus.com',
+                            from: 'Google@Google.com',
                             to: 'user11@appsus.com',
                             isStared:false,
                             isDraft:false,
@@ -171,12 +172,22 @@ function _createEmails() {
                                 isRead: true,
                                 sentAt : 1235133930594,
                                 removedAt : null,
-                                from: 'user@appsus.com',
+                                from: 'Google@Google.com',
                                 to: 'user11@appsus.com',
                                 isStared:false,
                                 isDraft:false,
                                 
                                 }
+
+                           
+
+
+
+
+
+
+
+
                 ]
 
         utilService.saveToStorage(EMAIL_KEY, emails)

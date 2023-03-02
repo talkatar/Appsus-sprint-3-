@@ -3,7 +3,7 @@ export default {
     template: `
         <article class="email-preview flex align-center"> 
                 <button class=btn-star-prev @click="handleStarred"><i class="fa-solid fa-star"></i></button>
-                
+                <!-- :class="[email.isRead ? 'btn-star-prev' : 'unread']" -->
                     <p class="email-from" @click="openMail">{{ email.nameSender }}</p>
                     <p class="content flex align-center" @click="openMail">
                         <p class="email-subject">{{ email.subject}}&nbsp;-</p>

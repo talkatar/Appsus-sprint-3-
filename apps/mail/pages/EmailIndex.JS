@@ -71,10 +71,8 @@ methods: {
 
   
     setFilterBy(filterBy) {
-        console.log(filterBy);
 
         if(filterBy.isRead){
-            console.log(filterBy.isRead);
             if (filterBy.isRead=== 'read') {
                 this.filterBy.isRead =true
             }
@@ -86,15 +84,12 @@ methods: {
         }
 
         if(filterBy.txt) this.filterBy.txt = filterBy.txt
+
         if(filterBy.status) {
-            console.log('hi');
             this.filterBy.status = filterBy.status
-            console.log(this.filterBy);
         }
         if(filterBy.sortOption) {
-            console.log(filterBy.sortOption);
             this.filterBy.sortOption = filterBy.sortOption
-            console.log(this.filterBy);
         }
     }
     
@@ -103,7 +98,7 @@ methods: {
 computed: {
 
     filteredEmails() {
-        console.log('12345');
+
         let filteredEmails = this.emails
 
         const {txt, isRead, status,sortOption} = this.filterBy
@@ -113,7 +108,6 @@ computed: {
             console.log(regex);
             filteredEmails = this.emails.filter(email => regex.test(email.subject) || regex.test(email.body))
         }
-        console.log(isRead);
       
         if(isRead !== null){
             filteredEmails = this.emails.filter(email => email.isRead === isRead)
@@ -121,34 +115,28 @@ computed: {
 
         if(status){
            
-            // filteredEmails = this.emails.filter(email => email.status === status)
-            // console.log(filteredEmails);
-            if(status ==='inbox'){
-                console.log(filteredEmails);
-                filteredEmails = filteredEmails.filter(email => email.to === emailService.loggedinUser.email)
 
+            if(status ==='inbox'){
+                
+                filteredEmails = filteredEmails.filter(email => email.to === emailService.loggedinUser.email)
             }
+
             if(status==='sent'){
                 filteredEmails = filteredEmails.filter(email => email.from === emailService.loggedinUser.email)
-
             }
 
             if(status === 'starred'){
                 filteredEmails = filteredEmails.filter(email => email.isStared)
-
-
             }
 
             if(status==='trash'){
                 filteredEmails = filteredEmails.filter(email => email.isTrash)
-
             }
         }
 
         if(sortOption)
         {
             if(sortOption ==='date'){
-
                 filteredEmails =filteredEmails.sort((a, b) => b.sentAt - a.sentAt);
 
          
@@ -156,7 +144,7 @@ computed: {
 
             
             if(sortOption ==='title'){
-                filteredEmails= filteredEmails.sort((a, b) => a.subject.localeCompare(b.subject));
+            filteredEmails= filteredEmails.sort((a, b) => a.subject.localeCompare(b.subject));
             }
 
         }
@@ -174,7 +162,20 @@ components: {
     EmailCompose,
 
 }
+
+
+ ,watch: {
+    $route: {
+
+         oldValue:'http://127.0.0.1:5501/index.html#/email',
+         newValue:'http://127.0.0.1:5501/index.html#/email?reload',
+
+        handler(newValue, oldValue) {
+           console.log(newValue)
+           console.log(oldValue)
+        },
+        deep: true
+    }
 }
 
-
-
+}

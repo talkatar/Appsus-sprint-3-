@@ -2,8 +2,8 @@ export default {
     props: ['email'],
     template: `
         <article class="email-preview flex align-center"> 
-                <button class=btn-star-prev @click="handleStarred"><i class="fa-solid fa-star"></i></button>
-                <!-- :class="[email.isRead ? 'btn-star-prev' : 'unread']" -->
+                <button :class="[isStarclicked ? 'btn-star-clicked' :'btn-star-prev']" @click="handleStarred"><i class="fa-solid fa-star"></i></button>
+
                     <p class="email-from" @click="openMail">{{ email.nameSender }}</p>
                     <p class="content flex align-center" @click="openMail">
                         <p class="email-subject">{{ email.subject}}&nbsp;-</p>
@@ -15,13 +15,22 @@ export default {
 
                 <p class="date">{{ formatDate }}</p>
         </article>
-    `,
+    `
 
+
+
+, data(){ return { 
+
+    isStarclicked :false,
+}
+
+
+
+},
 
 methods: {
 
     removeEmail(emailId) {
-        // ev.stopPropagation()
         this.$emit('removeEmail', emailId)
     },
 
@@ -31,21 +40,20 @@ methods: {
     openMail(){
         this.$router.push(`/email/${this.email.id}`)
     },
+
     handleStarred(){
-        if(!this.email.isStared){
-            this.email.isStared=true
-            return 'btn-star-clicked'
+        console.log(this.isStarclicked);
 
-        }
-        else{
-            this.email.isStared=false
-            return 'btn-star-prev'
+        this.isStarclicked=!this.isStarclicked
+        console.log(this.isStarclicked);
 
-        }
+        this.email.isStared=!this.email.isStared
 
     }
 
 }
+
+
 
 ,computed:{
      formatDate() {
@@ -70,9 +78,9 @@ methods: {
           hours = hours ? hours : 12; // Handle midnight (0 hours)
           return hours + ':' + (minutes < 10 ? '0' + minutes : minutes) + ' ' + ampm;
         }
-      }
+      },
 
-
+   
     }
 
 }

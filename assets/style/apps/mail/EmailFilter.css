@@ -5,16 +5,16 @@
     background-color: #eaf1fb;
     border: 1px solid transparent;
    border-radius: 8px;
-    margin-left: auto;
-    margin-right: auto;
+    /* margin-left: auto;
+    margin-right: auto; */
     width: 400px;
     max-width: 720px;
    
 }
 .btn-hamburger{
     position: absolute;
-    top: 125px;
-    left: 330px;
+    top: 132px;
+    left: 475px;
     background-color: transparent;
     border-style: none;
     color: black;
@@ -66,6 +66,7 @@
 }
 .Search-options{
     display: flex;
+    margin-inline-start: 110px;
     justify-content: space-between;
     gap:15px;
     flex-direction: column;

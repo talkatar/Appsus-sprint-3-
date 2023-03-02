@@ -117,7 +117,7 @@ computed: {
            
 
             if(status ==='inbox'){
-                
+
                 filteredEmails = filteredEmails.filter(email => email.to === emailService.loggedinUser.email)
             }
 
@@ -144,7 +144,7 @@ computed: {
 
             
             if(sortOption ==='title'){
-            filteredEmails= filteredEmails.sort((a, b) => a.subject.localeCompare(b.subject));
+            filteredEmails= filteredEmails.sort((a, b) => b.subject.localeCompare(a.subject));
             }
 
         }

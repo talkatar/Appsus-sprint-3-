@@ -69,13 +69,13 @@ function _createEmails() {
             subject: 'Tal, save even more with a free Amazon Business account!',
             body: 'you are receiving this email because you have a business-issued credit card in your Amazon account',
             isRead: true,
-            sentAt :1677774876492,
+            sentAt :1551133930594,
             removedAt : null,
             from: 'Amazon@Amazon.com',
             to: 'user@appsus.com',
             isStared:false,
             isDraft:false,
-           
+            
             },
             {
                 id: 'e102',
@@ -83,7 +83,7 @@ function _createEmails() {
                 subject: 'GitGuardian has detected the following Google API Key exposed within your GitHub account.' ,
                 body: 'Would love to catch up sometimes',
                 isRead: false,
-                sentAt : 1551133930594,
+                sentAt : 1677774876492,
                 removedAt : null,
                 from: 'Google@Google.com',
                 to: 'user@appsus.com',
@@ -97,13 +97,12 @@ function _createEmails() {
                 subject: ' Explore jobs similar to your job alert',
                 body: 'No matching jobs for: operations project manager in Herzliya, Tel Aviv District, Israel today',
                 isRead: false,
-                sentAt : 1521133930594,
+                sentAt : 1221133930594,
                 removedAt : null,
                 from: 'LinkedIn@LinkedIn.com',
                 to: 'user@appsus.com',
                 isStared:true,
                 isDraft:true,
-
                 },
                 {
                     id: 'e104',
@@ -111,7 +110,7 @@ function _createEmails() {
                     subject: ' Sound like a good idea? All you have to do is go to eBay',
                     body: 'Keeping your personal info up to date can help better protect your account',
                     isRead: false,
-                    sentAt : 1221133930594,
+                    sentAt : 1521133930594,
                     removedAt : null,
                     from: 'eBay@eBay.com',
                     to: 'user@appsus.com',

@@ -28,8 +28,12 @@
     text-overflow: ellipsis;
 }
 
+.date{
 
-.btn-delete ,.btn-toggle-read,.btn-star-prev {
+    margin-inline-end: 25px;
+}
+
+.btn-delete ,.btn-toggle-read,.btn-star-prev,.btn-star-clicked {
     display: none;
    background-color: transparent;
     border-style: none;
@@ -52,7 +56,8 @@ margin-inline-start: 10px;
 .btn-star-clicked{
     margin-inline-start: 10px;
     display: block;
-    color: yellow;
+    color: rgb(245, 215, 80);
+
 }
 
 btn-star-prev
@@ -66,7 +71,7 @@ li:hover .btn-delete ,li:hover .btn-toggle-read {
     display: block;
 } 
 
- .btn-delete:hover ,.btn-toggle-read:hover ,.btn-star-prev:hover {
+ .btn-delete:hover ,.btn-toggle-read:hover ,.btn-star-prev:hover,.btn-star-clicked:hover {
     background-color: #dfe4ec;
     border: 1px solid rgb(207, 206, 206);
 }

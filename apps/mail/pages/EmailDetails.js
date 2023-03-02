@@ -23,11 +23,9 @@ export default {
           <div class="email-body-details">{{email.body}}</div>
           
             <nav>
-            <!-- <RouterLink :to="'/email/' + email.prevEmailId">Previous Email</RouterLink> |
-            <RouterLink :to="'/email/' + email.nextEmailId">Next Email</RouterLink> -->
+         
                 <hr />
             </nav>
-                        <!-- <AddReview @reviewSaved="addEmailReview" /> -->
 
        
         </section>

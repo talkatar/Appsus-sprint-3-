@@ -12,7 +12,7 @@ export const emailService = {
     get,
     remove,
     save,
-    // getEmptyEmail,
+    getEmptyEmail,
     // addReview,
     // removeReview,
     // addGoogleEmail
@@ -64,9 +64,10 @@ function _createEmails() {
             subject: 'Tal, save even more with a free Amazon Business account!',
             body: 'you are receiving this email because you have a business-issued credit card in your Amazon account',
             isRead: true,
+            isSent: false,
             sentAt : '',
             removedAt : null,
-            from: 'momo@momo.com',
+            from: 'Amazon@Amazon.com',
             to: 'user@appsus.com',
            
             },
@@ -76,9 +77,10 @@ function _createEmails() {
                 subject: 'GitGuardian has detected the following Google API Key exposed within your GitHub account.' ,
                 body: 'Would love to catch up sometimes',
                 isRead: false,
-                sentAt : 1551133930594,
+                isSent: false,
+                sentAt : '',
                 removedAt : null,
-                from: 'momo@momo.com',
+                from: 'Google@Google.com',
                 to: 'user@appsus.com'
                 }
             , {
@@ -87,9 +89,10 @@ function _createEmails() {
                 subject: ' Explore jobs similar to your job alert',
                 body: 'No matching jobs for: operations project manager in Herzliya, Tel Aviv District, Israel today',
                 isRead: false,
+                isSent: false,
                 sentAt : 1551133930594,
                 removedAt : null,
-                from: 'momo@momo.com',
+                from: 'LinkedIn@LinkedIn.com',
                 to: 'user@appsus.com'
                 },
             
@@ -99,9 +102,10 @@ function _createEmails() {
                     subject: ' Sound like a good idea? All you have to do is go to eBay',
                     body: 'Keeping your personal info up to date can help better protect your account',
                     isRead: false,
+                    isSent: false,
                     sentAt : 1551133930594,
                     removedAt : null,
-                    from: 'momo@momo.com',
+                    from: 'eBay@eBay.com',
                     to: 'user@appsus.com'
                     }]
 
@@ -112,30 +116,21 @@ function _createEmails() {
 
 
 
-// function getEmptyEmail(title, amount) {
-//     return{
-//         id: '',
-//         title,
-//         subtitle: "mi est eros convallis auctor arcu dapibus himenaeos",
-//         authors: [
-//           "Barbara Cartland"
-//         ],
-//         publishedDate: 1999,
-//         description: "placerat nisi sodales suscipit tellus tincidunt mauris elit sit luctus interdum ad dictum platea vehicula conubia fermentum habitasse congue suspendisse",
-//         pageCount: 713,
-//         categories: [
-//           'Computers',
-//           'Hack'
-//         ],
-//         thumbnail: "http://coding-academy.org/emails-photos/20.jpg",
-//         language: "en",
-//         listPrice: {
-//           amount,
-//           currencyCode: "EUR",
-//           isOnSale: false
-//         }
-//       }
-// }
+function getEmptyEmail() {
+    return{
+        id: '',
+        // nameSender:'Tal katar',
+        subject: '',
+        body: '',
+        isRead: false,
+        isSent: true,
+        sentAt : new Date(),
+        removedAt : null,
+        to: '',
+       
+        }
+      
+}
 
 
 // function addReview(emailId,review){

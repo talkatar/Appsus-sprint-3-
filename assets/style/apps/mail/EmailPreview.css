@@ -1,5 +1,5 @@
 .email-from {
-   width: 120px;
+   width: 190px;
 }
 
 .content {
@@ -9,14 +9,41 @@
 
 .email-subject {
     /* width:100px; */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
     
 }
 
 .email-body {
+    padding-left: 10px;
     color: #5f6368;
     font-family: Roboto-Regular;
     font-weight: lighter;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+}
+
+
+.btn-delete ,.btn-toggle-read {
+    display: none;
+    font-size: 14px; 
+   background-color: transparent;
+    border-style: none;
+    color: black;
+     font-size: 18px;
+    cursor: pointer;
+     padding: 6px 9px 6px 6px; 
+     border-radius: 50%; 
+    transition: all 0.2s;
+margin-inline-start: 10px;}
+
+li:hover .btn-delete ,.btn-toggle-read {
+    display: block;
+} 
+
+ .btn-delete:hover ,.btn-toggle-read:hover {
+    background-color: #dfe4ec;
+    border: 1px solid rgb(207, 206, 206);
 }

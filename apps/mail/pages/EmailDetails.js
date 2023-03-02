@@ -6,16 +6,22 @@ export default {
     name:'EmailDetails',
 
     template: `
+    <div>
+    <button class="link-back"><RouterLink   to="/email"><i class="fa-solid fa-arrow-left"></i> </RouterLink></button>
+
+    <button class="btn-delete details" v-if=this.displayBtn @click="removeEmail(email.id)"><i class="fa-solid fa-trash"></i></button>
+    </div>
+           
+
         <section class="email-details" v-if="email">
-          <div>{{email.subject}}</div>
-          <div>{{email.body}}</div>
-          <div>{{email.from}}</div>
-          <div>{{email.to}}</div>
 
 
-
-
-        <button v-if=this.displayBtn @click="removeEmail(email.id)"><i class="fa-solid fa-trash"></i></button>
+          <h1 class="email-subject">{{email.subject}}</h1>
+          <h4 class="email-nameSender">{{email.nameSender}} <span>{{email.from}}</span></h4>
+          <div class="to-me" >to me </div>
+            <p></p>
+          <div class="email-body">{{email.body}}</div>
+          
 
 
 
@@ -25,7 +31,6 @@ export default {
             <!-- <RouterLink :to="'/email/' + email.prevEmailId">Previous Email</RouterLink> |
             <RouterLink :to="'/email/' + email.nextEmailId">Next Email</RouterLink> -->
                 <hr />
-            <RouterLink to="/email">Back </RouterLink>
             </nav>
                         <!-- <AddReview @reviewSaved="addEmailReview" /> -->
 

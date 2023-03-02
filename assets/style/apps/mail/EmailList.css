@@ -25,7 +25,7 @@ li:hover {
 }
 
 li {
-    margin-top: 10px;
+    /* margin-top: 10px; */
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -34,4 +34,25 @@ li {
 ul {
     padding: 10px;
     list-style-type: none;
+}
+
+.btn-delete {
+    display: none;
+    background-color: transparent;
+    border-style: none;
+    color: black;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 2px 2px;
+    border-radius: 50%;
+    transition: all 0.2s;
+}
+
+li:hover .btn-delete {
+    display: block;
+}
+
+.btn-delete:hover {
+    background-color: #dfe4ec;
+    border: 1px solid rgb(207, 206, 206);
 }

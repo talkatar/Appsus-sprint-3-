@@ -1,34 +1,50 @@
 
+import { emailService } from '../services/email.service.js'
+
+
 export default {
 
-    template: `
+  template: `
     <div class="new-mail">
     <div class="header">
-      <input type="text" placeholder="To" v-model="to" />
-      <input type="text" placeholder="Subject" v-model="subject" />
+      <div class="msg">New Message</div>
+      <input  style="border-bottom: 1px solid #b6cff5"  type="text" placeholder="To" v-model="email.to" />
+      <input  style="border-bottom: 1px solid #b6cff5"   type="text" placeholder="Subject" v-model="email.subject" />
     </div>
     <div class="body">
-      <textarea placeholder="Compose email" v-model="body"></textarea>
+      <textarea  v-model="email.body"></textarea>
     </div>
     <div class="footer">
       <button @click="send">Send</button>
-    </div>\index.html
+    </div>
   </div>
 `,
 
-data() {
+  data() {
     return {
-      to: '',
-      subject: '',
-      body: ''
-    }
-}
+      // to: '',
+      // subject: '',
+      // body: '',
+      email: emailService.getEmptyEmail()
 
-,  methods: {
+    }
+  }
+
+  , methods: {
     send() {
 
-        
+      emailService.save(this.email)
+        .then(savedEmail => {
+          // showSuccessMsg('Book saved')
+          this.$router.push('/email')
+        })
     }
+
+  }
+
+
+
+
 }
-}
+
 

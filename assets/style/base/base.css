@@ -9,6 +9,8 @@ html {
 body {
   margin: 0;
   color: var(--clr4);
+  font-family: Roboto-Regular;
+
 }
 
 h1,
@@ -42,10 +44,10 @@ object {
 
 /* tap targets: */
 nav a,
-button {
+/* button {
   min-width: 48px;
   min-height: 48px;
-}
+} */
 
 /* Simple and useful CSS Debugging Technique */
 .debug * {

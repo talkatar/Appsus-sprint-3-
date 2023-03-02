@@ -1,9 +1,12 @@
 .new-mail {
+  position: fixed;
+  bottom: 0;
+  right:5vw;
     background-color: white;
     border: 1px solid #ddd;
     border-radius: 5px;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-    padding: 10px;
+    /* padding-top: 10px; */
     width: 400px;
   }
   
@@ -16,7 +19,7 @@
     border: none;
     font-size: 16px;
     margin-bottom: 10px;
-    outline: none;
+    /* outline: none; */
   }
   
   .new-mail .body textarea {
@@ -35,11 +38,22 @@
   }
   
   .new-mail .footer button {
-    background-color: #4285f4;
+    position: absolute;
+    bottom: 10px;
+
+    left:  10px;
+    background-color: #0055df;
     border: none;
-    border-radius: 5px;
+    border-radius: 55px;
     color: white;
     cursor: pointer;
     font-size: 16px;
     padding: 10px 20px;
+  }
+
+  .msg{
+    height: 50px;
+    padding-left: 12px;
+    padding-top: 12px;
+    background-color: #f2f6fc;
   }

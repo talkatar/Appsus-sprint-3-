@@ -11,7 +11,6 @@ html {
   flex-direction: column;
   height: 100vh;
   font-family: Roboto-Regular;
-
 } */
 
 h1,
@@ -35,7 +34,7 @@ a {
 
 
 
-/* Dont stretch my Media */
+/* Dont stretch my Media */
 img,
 embed,
 video,
@@ -43,15 +42,14 @@ object {
   max-width: 100%
 }
 
-/* tap targets: */
+/* tap targets: */
 nav a,
 /* button {
   min-width: 48px;
   min-height: 48px;
 } */
 
-/* Simple and useful CSS Debugging Technique */
+/* Simple and useful CSS Debugging Technique */
 .debug * {
   outline: 1px solid gold
 }
-

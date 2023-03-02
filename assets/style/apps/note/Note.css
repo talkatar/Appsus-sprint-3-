@@ -2,7 +2,25 @@
     break-inside: avoid;
     text-align: center;
     background-color: var(--clr3);
-    padding-inline: 1vw;
-    padding-block: 0.2vh;
+    padding-inline: 2vw;
+    padding-block: 1vh;
     margin-block: 1vh;
+    border-radius: 15px;
+}
+
+.note .note-buttons {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.note .note-buttons button {
+    cursor: pointer;
+    border-radius: 15px;
+    border: none;
+    background-color: transparent;
+}
+
+.note .note-buttons button:hover {
+    opacity: 0.5;
 }

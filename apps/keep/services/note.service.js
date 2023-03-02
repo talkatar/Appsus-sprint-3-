@@ -94,8 +94,9 @@ function _createNotes() {
                             txt: 'Coding power', 
                             doneAt: 187111111 
                         } 
-                    ] 
-                } 
+                    ],
+                }, 
+                style: {}     
             }
         ]
         // books.push(_createBook('JS for dummies', 

@@ -21,9 +21,12 @@
 @import 'apps/mail/EmailFolderList.css';
 @import 'apps/mail/EmailCompose.css';
 @import 'apps/mail/EmailFilter.css';
+@import 'apps/mail/EmailDeatails.css';
 
 
 @import 'apps/note/NoteIndex.css';
 @import 'apps/note/NoteList.css';
 @import 'apps/note/Note.css';
 @import 'apps/note/NoteModal.css';
+@import 'apps/note/img-form-container.css';
+@import 'apps/note/note-adder.css';

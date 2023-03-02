@@ -1,11 +1,11 @@
 export default {
     props: ['info'],
     template: `
-        <p>{{ info.title }}</p>
-        <img src="image" alt="image not found"/>
+            <p>{{info.title}}</p>
+            <iframe :src="video"></iframe>
     `,
     computed: {
-        image() {
+        video() {
             return this.info.url
         }
     }

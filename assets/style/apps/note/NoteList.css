@@ -1,9 +1,15 @@
 .note-container {
-    columns: 3;
+    columns: 6 250px;
     margin-block-start: 2vh;
     margin-inline: 2vw;
+    border-radius: 25px;
+    padding-inline-start: 1vw;
 }
 
 .note-container img {
+    width: 100%;
+}
+
+.note-container iframe {
     width: 100%;
 }

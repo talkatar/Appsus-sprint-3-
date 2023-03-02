@@ -1,11 +1,14 @@
 import { noteService } from "../services/note.service.js"
 
 import NoteList from '../cmps/NoteList.js'
-import NoteDetails from './NoteDetails.js'
+// import NoteDetails from './NoteEdit.js'
 
 export default{
     template: `
-        <NoteList :notes="notes" @remove="deleteNote" @noteAdd="addNote"/>
+        <NoteList :notes="notes" 
+        @remove="deleteNote" @noteAdd="addNote" 
+        @duplicate="duplicateNote"
+        @setColor="setColor" @pinStatus="changePinStatus"/>
     `,
     data() {
         return {
@@ -33,6 +36,31 @@ export default{
                             .then(notes => this.notes = notes)
                         })
            
+        },
+        duplicateNote(newDuplicate) {
+            // console.log(newDuplicate)
+            newDuplicate.id = null
+            noteService.save(newDuplicate)
+                        .then(() => {
+                            noteService.query()
+                           .then(notes => this.notes = notes)
+                       })
+        },
+        setColor(updatedColorNote) {
+            // console.log(updatedColorNote)
+            noteService.save(updatedColorNote)
+                            .then(() => {
+                                noteService.query()
+                                .then(notes => this.notes = notes)
+                            })
+        },
+        changePinStatus(updatedPinNote) {
+            // console.log(pinStatus)
+            noteService.save(updatedPinNote)
+                            .then(() => {
+                                noteService.query()
+                                .then(notes => this.notes = notes)
+                            })
         }
     },
     created() {
@@ -41,6 +69,6 @@ export default{
     },
     components: {
         NoteList,
-        NoteDetails
+        // NoteDetails
     }
 }

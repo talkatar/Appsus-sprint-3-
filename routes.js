@@ -3,7 +3,7 @@ import AboutUs from './views/AboutUs.js'
 import EmailIndex from './apps/mail/pages/EmailIndex.js'
 import EmailDetails from './apps/mail/pages/EmailDetails.js'
 import EmailCompose from './apps/mail/cmps/EmailCompose.js'
-import NoteDetails from './apps/keep/pages/NoteDetails.js'
+import NoteEdit from './apps/keep/pages/NoteEdit.js'
 import NoteIndex from './apps/keep/pages/NoteIndex.js'
 
 
@@ -40,7 +40,7 @@ const routerOptions = {
 		},
 		{
 			path: '/keep/:noteId',
-			component: NoteDetails,
+			component: NoteEdit,
 		},
 	],
 }

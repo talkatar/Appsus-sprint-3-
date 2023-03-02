@@ -1,8 +1,15 @@
-.btn-list{
+/* .btn-list{
     display: flex;
     flex-direction: column;
 
-}
+} */
+.sidebar {
+    width: 110px;
+    background-color: #f9f9f9;
+    border-right: 1px solid #e0e0e0;
+    flex-shrink: 0;
+    height:100vh ;
+  }
 
 
 .btn-sent,.btn-inbox,.btn-draft,.btn-trash,.btn-starred {
@@ -43,7 +50,7 @@
   
   /* Style the custom tooltip */
   .btn-trash:hover::before  {
-    content: attr(title);
+    content: 'Trash';
     background-color: #333;
     color: #fff;
     padding: 5px;
@@ -56,14 +63,14 @@
 
 
     /* Hide the default tooltip */
-    .btn-trash[Inbox]::after {
-        content: "";
+    .btn-inbox[Inbox]::after {
+        content: '';
         display: none;
       }
       
       /* Style the custom tooltip */
       .btn-inbox:hover::before  {
-        content: attr(title);
+        content: 'Inbox';
         background-color: #333;
         color: #fff;
         padding: 5px;
@@ -76,14 +83,14 @@
   
       
         /* Hide the default tooltip */
-  .btn-Starred[Starred]::after {
+  .btn-starred[Starred]::after {
     content: "";
     display: none;
   }
   
   /* Style the custom tooltip */
-  .btn-Starred:hover::before  {
-    content: attr(title);
+  .btn-starred:hover::before  {
+    content: 'Starred';
     background-color: #333;
     color: #fff;
     padding: 5px;
@@ -94,14 +101,14 @@
     left:60px
   }
     /* Hide the default tooltip */
-    .btn-trash[Trash]::after {
+    .btn-sent[Sent]::after {
         content: "";
         display: none;
       }
       
       /* Style the custom tooltip */
-      .btn-trash:hover::before  {
-        content: attr(title);
+      .btn-sent:hover::before  {
+        content: 'Sent';
         background-color: #333;
         color: #fff;
         padding: 5px;
@@ -112,14 +119,14 @@
         left:60px
       }
     /* Hide the default tooltip */
-    .btn-trash[Trash]::after {
+    .btn-draft[Draft]::after {
         content: "";
         display: none;
       }
       
       /* Style the custom tooltip */
-      .btn-trash:hover::before  {
-        content: attr(title);
+      .btn-draft:hover::before  {
+        content: 'Draft';
         background-color: #333;
         color: #fff;
         padding: 5px;

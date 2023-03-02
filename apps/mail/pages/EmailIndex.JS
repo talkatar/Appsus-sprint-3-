@@ -9,17 +9,22 @@ import EmailCompose from '../cmps/EmailCompose.js'
 
 export default{
     template: `
+    <!-- <div class="container"> -->
 
         <EmailFilter @filter="setFilterBy"/>
+        
         <RouterLink to="/email/compose" class="btn-compose"><i class="fa-sharp fa-solid fa-pen"></i><span>Compose</span></RouterLink>  
 
-        <EmailFolderList @filterList="setfilterList" :emails="filteredEmails"/>
+        <div class="flex">
 
-        <EmailList :emails="filteredEmails" :emails="filteredEmails" v-if="emails" @removeEmail="removeEmail"/>
+        <EmailFolderList @filterList="setFilterBy"  v-if="emails" :emails="filteredEmails" />
+
+        <EmailList :emails="filteredEmails" v-if="emails" @removeEmail="removeEmail"/>
+        </div>
         <RouterView/>
-                 <!-- :emails=this.emails -->
 
 
+        <!-- </div> -->
 
 
 
@@ -28,8 +33,15 @@ export default{
 ,data() {
     return {
         emails: null,
-        filterBy: {},
-        keySort:''
+        filterBy: {
+            status: 'inbox',
+            txt: '',
+            isRead: null,
+            isStared: true,
+            lables: ['important', 'romantic']
+
+        },
+
     }
 }
 
@@ -60,35 +72,97 @@ methods: {
   
     setFilterBy(filterBy) {
         console.log(filterBy);
-        this.filterBy = filterBy
-    },
-    setfilterList(keySort) {
-        console.log(keySort);
-        this.keySort = keySort
+
+        if(filterBy.isRead){
+            console.log(filterBy.isRead);
+            if (filterBy.isRead=== 'read') {
+                this.filterBy.isRead =true
+            }
+            else if(filterBy.isRead=== 'unread')
+            this.filterBy.isRead =false
+
+        } else {
+            this.filterBy.isRead = null
+        }
+
+        if(filterBy.txt) this.filterBy.txt = filterBy.txt
+        if(filterBy.status) {
+            console.log('hi');
+            this.filterBy.status = filterBy.status
+            console.log(this.filterBy);
+        }
+        if(filterBy.sortOption) {
+            console.log(filterBy.sortOption);
+            this.filterBy.sortOption = filterBy.sortOption
+            console.log(this.filterBy);
+        }
     }
+    
 },
 
 computed: {
-    filteredEmails() {
-        return this.emails.filter((email) => {
-            console.log(this.filterBy);
-          const searchRegex = new RegExp(this.filterBy.title, 'i');
-          const readRegex = new RegExp(this.filterBy.selectedOption === 'all' ? '' : this.filterBy.selectedOption, 'i');
-          console.log(readRegex);
-          console.log(searchRegex);
-          console.log(searchRegex.test(email.subject||email.body) && readRegex.test(email.isRead ? 'true' : 'false'));
 
-          return searchRegex.test(email.subject||email.body) && readRegex.test(email.isRead ? 'read' : 'unread');
-        });
+    filteredEmails() {
+        console.log('12345');
+        let filteredEmails = this.emails
+
+        const {txt, isRead, status,sortOption} = this.filterBy
+
+        if(txt){
+            const regex = new RegExp(txt, 'i')
+            console.log(regex);
+            filteredEmails = this.emails.filter(email => regex.test(email.subject) || regex.test(email.body))
+        }
+        console.log(isRead);
+      
+        if(isRead !== null){
+            filteredEmails = this.emails.filter(email => email.isRead === isRead)
+        }
+
+        if(status){
+           
+            // filteredEmails = this.emails.filter(email => email.status === status)
+            // console.log(filteredEmails);
+            if(status ==='inbox'){
+                console.log(filteredEmails);
+                filteredEmails = filteredEmails.filter(email => email.to === emailService.loggedinUser.email)
+
+            }
+            if(status==='sent'){
+                filteredEmails = filteredEmails.filter(email => email.from === emailService.loggedinUser.email)
+
+            }
+
+            if(status === 'starred'){
+                filteredEmails = filteredEmails.filter(email => email.isStared)
+
+
+            }
+
+            if(status==='trash'){
+                filteredEmails = filteredEmails.filter(email => email.isTrash)
+
+            }
+        }
+
+        if(sortOption)
+        {
+            if(sortOption ==='date'){
+
+                filteredEmails =filteredEmails.sort((a, b) => b.sentAt - a.sentAt);
+
+         
+            }
+
+            
+            if(sortOption ==='title'){
+                filteredEmails= filteredEmails.sort((a, b) => a.subject.localeCompare(b.subject));
+            }
+
+        }
+        return filteredEmails
 
     },
-
-    filterList(){
-        return this.emails.filter((email) => email[this.keySort]===true)
-    }
-
-
-
 
 
 },
@@ -104,61 +178,3 @@ components: {
 
 
 
-
-// filteredEmails() {
-       
-//     const regex = new RegExp(this.filterBy.title, 'i')
-//     const readRegex = new RegExp(this.filterBy.selectedOption === 'all' ? '' : this.selectedOption, 'i');
-
-//     console.log(  regex);
-
-//     return this.emails.filter(email => 
-
-//         if(this.filterBy.selectedOption===unread)
-        
-//         {
-//             if((email.isRead===false)&&(regex.test(email.subject)||regex.test(email.body))
-//         }
-
-//         else if(this.filterBy.selectedOption===read)
-//         {
-//         if(email.isRead===true)&&(regex.test(email.subject)||regex.test(email.body))
-
-//          }
-       
-//          else (regex.test(email.subject)||regex.test(email.body))
-        
-    
-           
-           
-// },
-
-
-// },
-
-// filteredEmails() {
-//     const filtered = this.emails.filter((email) => {
-//       const searchRegex = new RegExp(this.searchTerm, 'i');
-//       const readRegex = new RegExp(this.readStatus === 'all' ? '' : this.readStatus, 'i');
-//       return searchRegex.test(email.subject) && readRegex.test(email.read ? 'read' : 'unread');
-//     });
-//     return filtered;
-
-
-
-// filteredEmails() {
-//     // if (!this.filterBy.price) {
-//     //     this.filterBy.title = ''
-//     //     this.filterBy.price = 200
-//     // }
-//     const regex = new RegExp(this.filterBy.title, 'i')
-//     console.log(  regex);
-//     return this.emails.filter(email => 
-//         regex.test(email.subject)||regex.test(email.body)
-    
-//            )
-           
-// },
-
-
-// },

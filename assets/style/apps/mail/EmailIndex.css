@@ -1,5 +1,14 @@
 
 
+ .container {
+display: grid; 
+    /* flex-direction: row; 
+    height: 80vh;  */
+  } 
+
+
+
+
 
 .btn-compose{
     display: flex;

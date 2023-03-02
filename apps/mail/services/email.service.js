@@ -6,6 +6,10 @@ import { storageService } from '../../../services/async-storage.service.js'
 const EMAIL_KEY = 'emailDB'
 
 _createEmails()
+const loggedinUser = {
+    email: 'user@appsus.com',
+    fullname: 'Mahatma Appsus'
+   }
 
 export const emailService = {
     query,
@@ -13,6 +17,7 @@ export const emailService = {
     remove,
     save,
     getEmptyEmail,
+    loggedinUser
     // addReview,
     // removeReview,
     // addGoogleEmail
@@ -64,11 +69,12 @@ function _createEmails() {
             subject: 'Tal, save even more with a free Amazon Business account!',
             body: 'you are receiving this email because you have a business-issued credit card in your Amazon account',
             isRead: true,
-            isSent: false,
-            sentAt : '',
+            sentAt :1677774876492,
             removedAt : null,
             from: 'Amazon@Amazon.com',
             to: 'user@appsus.com',
+            isStared:false,
+            isDraft:false,
            
             },
             {
@@ -77,37 +83,101 @@ function _createEmails() {
                 subject: 'GitGuardian has detected the following Google API Key exposed within your GitHub account.' ,
                 body: 'Would love to catch up sometimes',
                 isRead: false,
-                isSent: false,
-                sentAt : '',
+                sentAt : 1551133930594,
                 removedAt : null,
                 from: 'Google@Google.com',
-                to: 'user@appsus.com'
-                }
-            , {
+                to: 'user@appsus.com',
+                isStared:false,
+                isDraft:false,
+
+                },
+                {
                 id: 'e103',
                 nameSender:'LinkedIn Job Alerts',
                 subject: ' Explore jobs similar to your job alert',
                 body: 'No matching jobs for: operations project manager in Herzliya, Tel Aviv District, Israel today',
                 isRead: false,
-                isSent: false,
-                sentAt : 1551133930594,
+                sentAt : 1521133930594,
                 removedAt : null,
                 from: 'LinkedIn@LinkedIn.com',
-                to: 'user@appsus.com'
+                to: 'user@appsus.com',
+                isStared:true,
+                isDraft:true,
+
                 },
-            
                 {
                     id: 'e104',
                     nameSender:'eBay',
                     subject: ' Sound like a good idea? All you have to do is go to eBay',
                     body: 'Keeping your personal info up to date can help better protect your account',
                     isRead: false,
-                    isSent: false,
-                    sentAt : 1551133930594,
+                    sentAt : 1221133930594,
                     removedAt : null,
                     from: 'eBay@eBay.com',
-                    to: 'user@appsus.com'
-                    }]
+                    to: 'user@appsus.com',
+                    isStared:false,
+                    isDraft:true,
+                    
+                },
+                {
+                    id: 'e105',
+                    nameSender:'eBay',
+                    subject: ' Sound like a good idea? All you have to do is go to eBay',
+                    body: 'Keeping your personal info up to date can help better protect your account',
+                    isRead: false,
+                    sentAt : 1224133930594,
+                    removedAt : null,
+                    from: 'user@appsus.com',
+                    to: 'user11@appsus.com',
+                    isStared:false,
+                    isDraft:true,
+                    
+                    }
+
+
+                    ,{
+                        id: 'e106',
+                        nameSender:'eBay',
+                        subject: ' Sound like a good idea? All you have to do is go to eBay',
+                        body: 'Keeping your personal info up to date can help better protect your account',
+                        isRead: true,
+                        sentAt : 1234133930594,
+                        removedAt : null,
+                        from: 'user@appsus.com',
+                        to: 'user11@appsus.com',
+                        isStared:false,
+                        isDraft:false,
+                        
+                        }
+                        ,{
+                            id: 'e107',
+                            nameSender:'eBay',
+                            subject: ' Sound like a good idea? All you have to do is go to eBay',
+                            body: 'Keeping your personal info up to date can help better protect your account',
+                            isRead: true,
+                            sentAt : 1235133930594,
+                            removedAt : null,
+                            from: 'user@appsus.com',
+                            to: 'user11@appsus.com',
+                            isStared:false,
+                            isDraft:false,
+                            
+                            }
+                        ,{
+                                id: 'e108',
+                                nameSender:'eBay',
+                                subject: ' Sound like a good idea? All you have to do is go to eBay',
+                                body: 'Keeping your personal info up to date can help better protect your account',
+                                isRead: true,
+                                sentAt : 1235133930594,
+                                removedAt : null,
+                                from: 'user@appsus.com',
+                                to: 'user11@appsus.com',
+                                isStared:false,
+                                isDraft:false,
+                                
+                                }
+                ]
 
         utilService.saveToStorage(EMAIL_KEY, emails)
     }
@@ -119,15 +189,17 @@ function _createEmails() {
 function getEmptyEmail() {
     return{
         id: '',
-        // nameSender:'Tal katar',
+        nameSender:'',
         subject: '',
         body: '',
         isRead: false,
-        isSent: true,
         sentAt : new Date(),
         removedAt : null,
         to: '',
-       
+        isStared:false,
+        isDraft:true,
+        from: 'user@appsus.com',
+
         }
       
 }

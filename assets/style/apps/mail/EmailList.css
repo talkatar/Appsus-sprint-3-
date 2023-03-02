@@ -1,14 +1,20 @@
+
+
+ .email-list{
+    padding: 0;
+    /* display: grid; */
+    width: 100vw
+
+   
+ 
+} 
+
+
 .read {
     background-color: #f2f6fc;
     font-weight: lighter;
     font-family: Roboto-Regular;
 }
-
-
-/* .email-list {
-    max-width: 800px;
-    margin: 0 auto;
-  } */
 
 .unread {
     background-color: #ffffff;
@@ -19,40 +25,18 @@
 
 li:hover {
     cursor: pointer;
-    /* padding-bottom: 10px;
-    padding-top: 10px; */
     box-shadow: inset 1px 0 0 #dadce0, inset -1px 0 0 #dadce0, 0 1px 2px 0 rgb(60 64 67 / 30%), 0 1px 3px 1px rgb(60 64 67 / 15%);
 }
 
 li {
-    /* margin-top: 10px; */
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
 }
 
 ul {
-    padding: 10px;
+    padding: 0px;
     list-style-type: none;
 }
 
-.btn-delete {
-    display: none;
-    background-color: transparent;
-    border-style: none;
-    color: black;
-    font-size: 24px;
-    cursor: pointer;
-    padding: 2px 2px;
-    border-radius: 50%;
-    transition: all 0.2s;
-}
 
-li:hover .btn-delete {
-    display: block;
-}
-
-.btn-delete:hover {
-    background-color: #dfe4ec;
-    border: 1px solid rgb(207, 206, 206);
-}

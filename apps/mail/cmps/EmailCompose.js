@@ -5,19 +5,26 @@ import { emailService } from '../services/email.service.js'
 export default {
 
   template: `
+  <form @submit.prevent="send">
+
     <div class="new-mail">
     <div class="header">
+      
       <div class="msg">New Message</div>
-      <input  style="border-bottom: 1px solid #b6cff5"  type="text" placeholder="To" v-model="email.to" />
-      <input  style="border-bottom: 1px solid #b6cff5"   type="text" placeholder="Subject" v-model="email.subject" />
+      <input  style="border-bottom: 1px solid #b6cff5"  type="text" placeholder="To" v-model="email.nameSender" required />
+      <input  style="border-bottom: 1px solid #b6cff5"   type="text" placeholder="Subject" v-model="email.subject"required />
     </div>
     <div class="body">
       <textarea  v-model="email.body"></textarea>
     </div>
     <div class="footer">
-      <button @click="send">Send</button>
+      <button >Send</button>
     </div>
+   
   </div>
+</form>
+  
+
 `,
 
   data() {
@@ -36,15 +43,23 @@ export default {
       emailService.save(this.email)
         .then(savedEmail => {
           // showSuccessMsg('Book saved')
-          this.$router.push('/email')
+          this.$router.push('/email?reload')
         })
     }
 
   }
 
 
-
-
+  // watch: {
+  //   $route: {
+  //       handler(newValue, oldValue) {
+  //          console.log(newValue)
+  //          console.log(oldValue)
+  //       },
+  //       deep: true
+  //   }
 }
+
+
 
 

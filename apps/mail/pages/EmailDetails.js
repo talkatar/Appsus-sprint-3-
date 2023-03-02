@@ -16,14 +16,13 @@ export default {
         <section class="email-details" v-if="email">
 
 
-          <h1 class="email-subject">{{email.subject}}</h1>
-          <h4 class="email-nameSender">{{email.nameSender}} <span>{{email.from}}</span></h4>
-          <div class="to-me" >to me </div>
+          <h1 class="email-subject-details">{{email.subject}}</h1>
+          <h2 class="email-nameSender-details">{{email.nameSender}} <span class="email-adress">{{email.from}}</span></h2>
+          <div class="to-me-details" >to me </div>
             <p></p>
-          <div class="email-body">{{email.body}}</div>
+          <div class="email-body-details">{{email.body}}</div>
           
-
-
+          
 
 
 

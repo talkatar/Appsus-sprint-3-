@@ -8,10 +8,8 @@ export default {
         <section class="email-list">
             <ul>
                 <li :class="[email.isRead ? 'read' : 'unread']" v-for="email in emails" :key="email.id">
-               
-
-                    <RouterLink :to="'/email/'+email.id"  ><EmailPreview :email="email" @removeEmail="removeEmail"/></RouterLink>  
-                    <!-- <RouterLink :to="'/email/edit/'+email.id">Edit</RouterLink> |  -->
+            
+             <EmailPreview :email="email" @removeEmail="removeEmail"/>  
                     
 
                 </li>

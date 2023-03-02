@@ -1,6 +1,9 @@
 .email-from {
    width: 190px;
+   margin-inline-start: 20px;
 }
+
+
 
 .content {
     flex-grow: 1;
@@ -26,9 +29,8 @@
 }
 
 
-.btn-delete ,.btn-toggle-read {
+.btn-delete ,.btn-toggle-read,.btn-star-prev {
     display: none;
-    font-size: 14px; 
    background-color: transparent;
     border-style: none;
     color: black;
@@ -37,13 +39,56 @@
      padding: 6px 9px 6px 6px; 
      border-radius: 50%; 
     transition: all 0.2s;
-margin-inline-start: 10px;}
+margin-inline-start: 10px;
+;}
 
-li:hover .btn-delete ,.btn-toggle-read {
+.btn-star-prev{
+    margin-inline-start: 10px;
+    display: block;
+
+
+}
+
+.btn-star-clicked{
+    margin-inline-start: 10px;
+    display: block;
+    color: yellow;
+}
+
+btn-star-prev
+
+
+.btn-toggle-read{
+    margin-inline-end: 10px
+}
+
+li:hover .btn-delete ,li:hover .btn-toggle-read {
     display: block;
 } 
 
- .btn-delete:hover ,.btn-toggle-read:hover {
+ .btn-delete:hover ,.btn-toggle-read:hover ,.btn-star-prev:hover {
     background-color: #dfe4ec;
     border: 1px solid rgb(207, 206, 206);
 }
+
+
+
+.btn-delete[Trash]::after {
+    content: "";
+    display: none;
+  }
+  
+  /* Style the custom tooltip */
+  .btn-delete:hover::before  {
+    content: 'Trash';
+    background-color: #333;
+    color: #fff;
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 12px;
+    position: absolute;
+    z-index: 1;
+    right:130px;
+     /* bottom:50vh;  */
+
+  }

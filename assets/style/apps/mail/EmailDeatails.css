@@ -1,5 +1,5 @@
 .email-details {
-    /* margin-inline-start: 40px; */
+height: 90vh;
 }
 
 .btn-delete.details {
@@ -7,7 +7,7 @@
     margin-inline-start: 10px;
 }
 
-.link-back {
+.link-back  {
     margin-block-start: 10px;
     margin-block-end: 10px;
     background-color: transparent;
@@ -25,28 +25,28 @@
 }
 
 
-/* .btn-sent,.btn-inbox,.btn-draft,.btn-trash,.btn-starred {
-    background-color: transparent;
-    border-style: none;
-    color: black;
-    font-size: 25px;
-    cursor: pointer;
-    padding: 11px 11px 11px 11px; 
-    border-radius: 50%;
-    transition:  0.2s;
-  }
-  .btn-sent{
-    padding: 12px 15px 12px 12px; 
+.email-body-details,.to-me-details ,.email-nameSender-details,.email-subject-details{
+
+margin-inline-start: 50px;
+}
+.email-subject-details{
     font-size: 24px;
-  }
+    margin-block-end:50px ;
+}
+.email-nameSender-details{
+    font-size: 20px;
+    margin-block-end:40px ;
 
-  .btn-draft{
-    font-size: 22px;
 
+}
+.email-adress{
+    font-weight: lighter;
+    font-size: 16px;
 
-  }
-  
- .btn-sent:hover,.btn-inbox:hover,.btn-draft:hover,.btn-trash:hover,.btn-starred:hover {
-    background-color: #dfe4ec;
-    border: 1px solid rgb(207, 206, 206);
-  } */
+}
+
+.email-body-details{
+    margin-block-start:60px ;
+    margin-block-end:100px ;
+}
+         

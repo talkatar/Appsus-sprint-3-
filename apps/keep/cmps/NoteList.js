@@ -6,14 +6,14 @@ import NoteFilter from "../cmps/NoteFilter.js"
 export default {
     name: 'NoteList',
     emits: ['remove', 'noteAdd', 'duplicate', 'setColor', 'changePinStatus'],
-    props: ['notes'],
+    props: ['notes', 'query'],
     template: `
         <div class="notes">
             <section class="notes-filter">
                 <NoteFilter @setFilter="filterNotes"/>
             </section>
             <section class="note-page">
-                <AddNote @noteAdd="AddNote"/>
+                <AddNote @noteAdd="AddNote" :query="query"/>
                 <section class="note-container">
                     <p v-if="pinnedNotes.length > 0">pinned</p>
                     <NotePreview v-for="note in pinnedNotes" 
@@ -33,7 +33,8 @@ export default {
     `,
     data() {
         return {
-            filterBy: null
+            filterBy: null,
+            listParams: this.params
         }
     },
     methods: {
@@ -59,13 +60,13 @@ export default {
     },
     computed: {
         filteredNotes() {
-            if(!this.filterBy) return this.notes
+            if (!this.filterBy) return this.notes
             const regex = new RegExp(this.filterBy.txt, 'i')
             let type = this.filterBy.type
-            if(this.filterBy.type === 'all') {
+            if (this.filterBy.type === 'all') {
                 return this.notes.filter(note => regex.test(note.info.title) || regex.test(note.info.txt))
             } else {
-                return this.notes.filter(note => 
+                return this.notes.filter(note =>
                     note.type === type && (regex.test(note.info.title) || regex.test(note.info.txt)))
             }
         },

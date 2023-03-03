@@ -5,17 +5,18 @@ import NoteList from '../cmps/NoteList.js'
 
 export default{
     template: `
-        <NoteList :notes="notes" 
+        <NoteList :notes="notes" :params="params"
         @remove="deleteNote" @noteAdd="addNote" 
         @duplicate="duplicateNote"
         @setColor="setColor" @pinStatus="changePinStatus"/>
-    `,
+   `,
     data() {
         return {
             notes: null,
+            params: this.$route.query.params
         }
     },
-    methods: {
+    methods: {     
         deleteNote(noteId) {
             console.log(this.notes)
             // console.log(noteId)

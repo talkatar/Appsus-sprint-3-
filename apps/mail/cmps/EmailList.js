@@ -11,7 +11,7 @@ export default {
                 <!-- :class="[email.isRead ? 'read' : 'unread']" -->
                 <!-- class="{{emailClass}}" -->
                 <!-- :class="[email.isRead ? 'read' : (email.isStared ? btn-star-clicked  : unread)]" -->
-             <EmailPreview :email="email" @removeEmail="removeEmail"/>  
+                <EmailPreview :email="email" @removeEmail="removeEmail"/>  
                     
 
                 </li>

@@ -6,6 +6,7 @@ import NoteVideoInput from "./NoteVideoInput.js"
 
 export default {
     name:'AddNote',
+    props: ['params'],
     emits: ['noteAdd'],
     template: `
         <div class="note-adder">
@@ -17,7 +18,7 @@ export default {
                 <button @click="noteType = ''"><i class="fa-regular fa-eye-slash"></i></button>
             </section>
             <section class="note-inputs">
-                <NoteTextInput v-if="noteType === 'NoteText'" :noteType="this.noteType" @addTextNote="addNote"/>
+                <NoteTextInput v-if="noteType === 'NoteText'" :noteType="this.noteType" @addTextNote="addNote" :params="params"/>
                 <NoteImgInput v-if="noteType === 'NoteImg'" :noteType="this.noteType" @addImgNote="addNote"/>
                 <NoteTodosInput v-if="noteType === 'NoteTodos'" :noteType="this.noteType" @addTodosNote="addNote"/>
                 <NoteVideoInput v-if="noteType === 'NoteVideo'" :noteType="this.noteType" @addVideoNote="addNote"/>
@@ -27,7 +28,8 @@ export default {
     data() {
         return {
             noteType: '',
-            newNote: noteService.getEmptyNote()
+            newNote: noteService.getEmptyNote(),
+            params: this.params
         }
     },
     created() {
@@ -35,26 +37,8 @@ export default {
     },
     methods: {
         addNote(newNote) {
-            // console.log(newNote)
             this.$emit('noteAdd', newNote)
         }
-        // addNote() {
-        //     let newNote = this.newNote
-        //     newNote.type = this.noteType
-        //     if(this.noteType === 'NoteTodos') {
-        //         let todos = newNote.info.todos
-        //         newNote.info.todos = todos.split(',')
-        //         let newArr = newNote.info.todos.map(todo => 
-        //             todo = {
-        //                 txt: todo,
-        //                 doneAt: null
-        //             })
-        //         console.log(newArr)
-        //         newNote.info.todos = newArr
-        //     }
-        //     console.log(newNote)
-        //     this.$emit('noteAdd', newNote)
-        // }
     },
     components: {
         NoteTextInput,

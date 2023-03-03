@@ -46,26 +46,5 @@ export default {
         NoteImgInput,
         NoteTodosInput,
         NoteVideoInput
-    },
-    data() {
-        return {
-            noteType: '',
-            newNote: noteService.getEmptyNote(),
-            params: this.params
-        }
-    },
-    created() {
-
-    },
-    methods: {
-        addNote(newNote) {
-            this.$emit('noteAdd', newNote)
-        }
-    },
-    components: {
-        NoteTextInput,
-        NoteImgInput,
-        NoteTodosInput,
-        NoteVideoInput
     }
 }

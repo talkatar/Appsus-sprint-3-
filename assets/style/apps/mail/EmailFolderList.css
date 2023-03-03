@@ -4,7 +4,7 @@
 
 } */
 .sidebar {
-    width: 110px;
+    width: 118px;
     background-color: #f9f9f9;
     border-right: 1px solid #e0e0e0;
     flex-shrink: 0;
@@ -29,6 +29,10 @@
 
   .btn-draft{
     font-size: 22px;
+    margin-inline-start: 5px;
+  }
+  .btn-trash{
+    margin-inline-start: 2px;
   }
 
   .btn-inbox{

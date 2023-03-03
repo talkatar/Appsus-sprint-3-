@@ -1,4 +1,5 @@
 
+import { showSuccessMsg } from '../../../services/event-bus.service.js'
 import {emailService} from '../services/email.service.js'
 
 
@@ -9,7 +10,7 @@ export default {
     <div>
     <button class="link-back"><RouterLink   to="/email"><i class="fa-solid fa-arrow-left"></i> </RouterLink></button>
 
-    <button class="btn-delete details" v-if=this.displayBtn @click="removeEmail(email.id)"><i class="fa-solid fa-trash"></i></button>
+    <button class="btn-delete-details" v-if=this.displayBtn @click="removeEmail(email.id)"><i class="fa-solid fa-trash"></i></button>
     </div>
            
 
@@ -18,16 +19,14 @@ export default {
 
           <h1 class="email-subject-details">{{email.subject}}</h1>
           <h2 class="email-nameSender-details">{{email.nameSender}} <span class="email-adress">{{email.from}}</span></h2>
-          <div class="to-me-details" >to me </div>
+          <!-- <div class="to-me-details" >to me </div> -->
             <p></p>
           <div class="email-body-details">{{email.body}}</div>
           
             <nav>
-            <!-- <RouterLink :to="'/email/' + email.prevEmailId">Previous Email</RouterLink> |
-            <RouterLink :to="'/email/' + email.nextEmailId">Next Email</RouterLink> -->
+         
                 <hr />
             </nav>
-                        <!-- <AddReview @reviewSaved="addEmailReview" /> -->
 
        
         </section>
@@ -64,7 +63,7 @@ export default {
                 .then(() => {
                     this.email='null'
                     this.displayBtn=false
-
+                    showSuccessMsg('email removec')
                     // const idx = this.emails.findIndex(email => email.id === emailId)
                     // this.emails.splice(idx, 1)
 

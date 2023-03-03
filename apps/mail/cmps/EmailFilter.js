@@ -38,7 +38,7 @@ export default {
     ,
     data() {
         return {
-            filterBy: { txt: '', isRead: null, sortOption:'' },
+            filterBy: { txt: '', isRead: null, sortOption: '' },
             isModalOpen: false
         }
     },

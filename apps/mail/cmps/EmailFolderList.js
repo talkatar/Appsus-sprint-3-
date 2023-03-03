@@ -1,6 +1,6 @@
 export default {
-    props:['emails'],
-    emits:['filterList'],
+    props: ['emails'],
+    emits: ['filterList'],
 
     template: `
        
@@ -19,32 +19,32 @@ export default {
     `,
     data() {
         return {
-            filterBy: {status: '', },
-            counter:0,
+            filterBy: { status: '', },
+            counter: 0,
 
-            
-                 
+
+
         }
     },
     methods: {
-        filter(newStatus){
+        filter(newStatus) {
             console.log(newStatus);
-            this.filterBy.status=newStatus
+            this.filterBy.status = newStatus
             this.$emit('filterList', this.filterBy)
         },
 
-        
+
 
     }
-    ,computed:{
+    , computed: {
 
-        countUnreadMails(){
-            this.counter=0
-            this.emails.forEach(email=>{
+        countUnreadMails() {
+            this.counter = 0
+            this.emails.forEach(email => {
                 // console.log(counter);
-                if(!email.isRead) this.counter++
-            }  )
-            return  this.counter
+                if (!email.isRead) this.counter++
+            })
+            return this.counter
         }
 
 

@@ -1,4 +1,4 @@
-
+import { eventBus } from '../../../services/event-bus.service.js'
 import { emailService } from '../services/email.service.js'
 
 
@@ -6,7 +6,6 @@ export default {
 
   template: `
   <form @submit.prevent="send">
-
     <div class="new-mail">
     <div class="header">
       
@@ -24,7 +23,6 @@ export default {
   </div>
 </form>
   
-
 `,
 
   data() {
@@ -40,7 +38,7 @@ export default {
     this.$refs.emailBody.value = this.query
   },
 
-   methods: {
+  methods: {
     send() {
 
       emailService.save(this.email)
@@ -58,9 +56,5 @@ export default {
   }
 
 
- 
+
 }
-
-
-
-

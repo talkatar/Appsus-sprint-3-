@@ -1,0 +1,27 @@
+.note-filter {
+    display: flex;
+    flex-direction: column;
+    width: 20vw;
+    max-width: 210px;
+    margin-block: 2vh;
+    padding-inline-start: 0.5vw;
+    text-align: left;
+}
+
+.note-filter input {
+    width: 100%;
+    max-height: 3vh;
+}
+
+.note-filter button {
+    cursor: pointer;
+    margin-block: 1vh;
+    border: none;
+    background-color: transparent;
+    max-width: 3vw;
+}
+
+.note-filter button:hover {
+    opacity: 0.5;
+    scale: 1.2;
+}

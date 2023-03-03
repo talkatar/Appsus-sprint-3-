@@ -30,3 +30,9 @@
 @import 'apps/note/NoteModal.css';
 @import 'apps/note/img-form-container.css';
 @import 'apps/note/note-adder.css';
+@import 'apps/note/note-filter.css';
+@import 'apps/note/note-inputs.css';
+@import 'apps/note/note-header.css';
+@import 'apps/note/notes.css';
+@import 'apps/note/note-page.css';
+@import 'apps/note/notes-filter.css';

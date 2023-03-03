@@ -6,12 +6,15 @@
     padding-block: 1vh;
     margin-block: 1vh;
     border-radius: 15px;
+    min-width: 150px;
+    margin-inline: 0;
 }
 
 .note .note-buttons {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    margin-block-start: 1vh;
 }
 
 .note .note-buttons button {
@@ -23,4 +26,6 @@
 
 .note .note-buttons button:hover {
     opacity: 0.5;
+    scale: 1.2;
 }
+

@@ -7,7 +7,7 @@ export default {
     template: `
     <form @submit.prevent="addNote">
         <input type="text" placeholder="enter note"  v-model="this.newNote.info.txt"/>
-        <button>save</button>
+        <button><i class="fa-solid fa-floppy-disk"></i></button>
     </form>
     `,
     data() {

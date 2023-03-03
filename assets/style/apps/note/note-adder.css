@@ -1,8 +1,23 @@
 .note-adder {
+    display: flex;
+    flex-direction: column;
+    justify-content: right;
     width: 40vw;
+    /* height: 5vh; */
     margin-inline: 30vw;
 }
 
-.note-adder button{
-    
+.note-adder section{
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.note-adder button {
+    border: none;
+    background-color: transparent;
+}
+
+.note-adder form {
+
 }

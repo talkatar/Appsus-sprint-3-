@@ -1,0 +1,13 @@
+.note-header {
+    display: flex;
+    justify-content: space-between;
+    padding-inline: 2vw;
+    padding-block: 2vh;
+    margin-block-start: 1vh;
+    border-radius: 25px;
+    background-color: rgb(38, 151, 171);
+}
+
+.note-header div {
+    margin: 0;
+}

@@ -1,0 +1,12 @@
+.notes-filter {
+    height: 100vh;
+    width:20vw;
+    margin: 0;
+    padding: 0;
+    background-color: lightgrey;
+    /* display: none; */
+}
+
+.notes-filter input {
+    width: 90%;
+}

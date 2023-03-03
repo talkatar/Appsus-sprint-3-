@@ -15,7 +15,7 @@ export default {
       <input  style="border-bottom: 1px solid #b6cff5"   type="text" placeholder="Subject" v-model="email.subject"required />
     </div>
     <div class="body">
-      <textarea  v-model="email.body"></textarea>
+      <textarea ref="emailBody"  v-model="email.body"></textarea>
     </div>
     <div class="footer">
       <button >Send</button>
@@ -35,9 +35,12 @@ export default {
       email: emailService.getEmptyEmail()
 
     }
-  }
+  },
+  mounted() {
+    this.$refs.emailBody.value = this.query
+  },
 
-  , methods: {
+   methods: {
     send() {
 
       emailService.save(this.email)
@@ -47,6 +50,11 @@ export default {
         })
     }
 
+  },
+  computed: {
+    query() {
+      return this.$route.query.params
+    }
   }
 
 

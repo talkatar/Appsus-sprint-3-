@@ -3,7 +3,7 @@ export default {
     template: `
             <p>{{ info.title }}</p>
             <ul>
-                <li v-for="todo in todos">{{ todo.txt }}</li>
+                <li v-for="todo in todos" :key="">{{ todo.txt }}</li>
             </ul>
     `,
    computed:{

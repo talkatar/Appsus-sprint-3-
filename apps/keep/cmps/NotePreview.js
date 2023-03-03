@@ -5,7 +5,7 @@ import NoteVideo from '../cmps/NoteVideo.js'
 
 export default {
     name: 'NotePreview',
-    emits: ['remove','duplicate', 'setColor', 'changePinStatus'],
+    emits: ['remove','duplicate', 'setColor', 'pinStatus'],
     props: ['note'],
     template: `
         <div class="note" :style={backgroundColor:color} :note="note">
@@ -14,8 +14,9 @@ export default {
                 <button @click="deleteNote()"><i class="fa-solid fa-trash"></i></button>
                 <RouterLink :to="'/keep/'+note.id"><button><i class="fa-solid fa-pen-to-square"></i></button></RouterLink>
                 <button @click="duplicateNote"><i class="fa-regular fa-copy"></i></button>
-                <button><input type="color" ref="colorInput" @change="setColor"/><i class="fa-solid fa-paint-roller"></i></button>
+                <button @click="setInput"><input hidden ref="colorInput" type="color" ref="colorInput" @change="setColor"/><i class="fa-solid fa-paint-roller"></i></button>
                 <button @click="changePinStatus"><i class="fa-solid fa-thumbtack"></i></button>
+                <button @click="createEmail"><i class="fa-solid fa-share"></i></button>
             </section>
             
             <!-- <button @click="openEditor()">edit</button> -->
@@ -34,6 +35,14 @@ export default {
         this.cmp.info = this.note.info
     },
     methods: {
+        createEmail() {
+            let noteParams = !this.note.info.txt ? this.note.info.title : this.note.info.txt
+            // console.log(noteParams)
+            this.$router.push({path:'/email/compose', query:{params: noteParams}})
+        },
+        setInput() {
+            this.$refs.colorInput.click()
+        },
         deleteNote() {
             let noteId = this.note.id
             this.$emit('remove', noteId)
@@ -75,3 +84,5 @@ export default {
         NoteVideo
     }
 }
+{/* <input class="color-input  " type="color" name="color-picker"
+							oninput="onSetColor(this.value)" /> */}

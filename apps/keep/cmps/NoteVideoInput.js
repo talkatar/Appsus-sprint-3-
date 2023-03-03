@@ -8,7 +8,7 @@ export default {
          <form @submit.prevent="addNote" enctype="multipart/form-data" class="img-form-container">
             <input type="text" placeholder="enter title" v-model="this.newNote.info.title"/>
             <input type="text" placeholder="enter video url" v-model="this.newNote.info.url"/>
-            <button>save</button>
+            <button><i class="fa-solid fa-floppy-disk"></i></button>
         </form>
     `,
     data() {

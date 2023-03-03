@@ -8,22 +8,28 @@ export default {
     emits: ['remove', 'noteAdd', 'duplicate', 'setColor', 'changePinStatus'],
     props: ['notes'],
     template: `
-        <NoteFilter @setFilter="filterNotes"/>
-        <AddNote @noteAdd="AddNote"/>
-        <section class="note-container">
-            <p v-if="pinnedNotes.length > 0">pinned</p>
-            <NotePreview v-for="note in pinnedNotes" 
-            :key="note.id" :note="note" @remove="deleteNote" 
-            @duplicate="duplicateNote" @setColor="setColor" 
-            @pinStatus="changePinStatus"/>
-        </section>
-        <section class="note-container">
-            <p v-if="pinnedNotes.length > 0">others</p>
-            <NotePreview v-for="note in unPinnedNotes" 
-            :key="note.id" :note="note" @remove="deleteNote" 
-            @duplicate="duplicateNote" @setColor="setColor"
-            @pinStatus="changePinStatus"/>
-        </section>
+        <div class="notes">
+            <section class="notes-filter">
+                <NoteFilter @setFilter="filterNotes"/>
+            </section>
+            <section class="note-page">
+                <AddNote @noteAdd="AddNote"/>
+                <section class="note-container">
+                    <p v-if="pinnedNotes.length > 0">pinned</p>
+                    <NotePreview v-for="note in pinnedNotes" 
+                    :key="note.id" :note="note" @remove="deleteNote" 
+                    @duplicate="duplicateNote" @setColor="setColor" 
+                    @pinStatus="changePinStatus"/>
+                </section>
+                <section class="note-container">
+                    <p v-if="pinnedNotes.length > 0">others</p>
+                    <NotePreview v-for="note in unPinnedNotes" 
+                    :key="note.id" :note="note" @remove="deleteNote" 
+                    @duplicate="duplicateNote" @setColor="setColor"
+                    @pinStatus="changePinStatus"/>
+                </section>
+            </section>
+        </div>    
     `,
     data() {
         return {

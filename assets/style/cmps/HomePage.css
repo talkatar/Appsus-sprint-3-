@@ -1,1 +1,30 @@
 /* // */
+
+/* body {
+    display: flex;
+    background-image: url('../../img/cover.jpg');
+    background-size:cover ;
+} */
+
+
+.gmail-logo{
+    background-image: url('../../img/Gmail-home-page.png');
+    /* scale:1;
+    width:128px; */
+    /* height:172px; */
+}
+
+.keep-logo{
+    /* scale:0.4; */
+    height:128px;
+    /* padding:0 */
+}
+
+.links{
+    height: 60vh;
+    display: flex;
+    flex-wrap: wrap;
+    gap:80px;
+    justify-content: center;
+    align-content: space-around
+}

@@ -1,17 +1,17 @@
 .user-msg {
     position: fixed;
-    top: 40px;
-    right: 20px;
-
+    bottom: 40px;
+    left: 20px;
+    color:  #fff;;
+    font-weight: 400;
     width: 290px;
-    background-color: rgb(208, 206, 139);
+    border-color: #f0c36d;
+    background-color: #f9edbe;
     padding: 10px;
-    border-radius: 5px;
+    border-radius: 2px;
     /* transition: opacity 1s; */
 }
 .success {
-    background-color: rgb(88, 130, 88);
-}
+    background-color: #202124;}
 .error {
-    background-color: rgb(187, 104, 104);
-}
+    background-color: #202124;}

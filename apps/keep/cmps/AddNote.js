@@ -6,7 +6,8 @@ import NoteVideoInput from "./NoteVideoInput.js"
 
 export default {
     name:'AddNote',
-    emits: ['noteAdd','query'],
+    props: ['params'],
+    emits: ['noteAdd'],
     template: `
         <div class="note-adder">
             <section>
@@ -17,7 +18,7 @@ export default {
                 <button @click="noteType = ''"><i class="fa-regular fa-eye-slash"></i></button>
             </section>
             <section class="note-inputs">
-                <NoteTextInput v-if="noteType === 'NoteText'" :noteType="this.noteType" @addTextNote="addNote"/>
+            <NoteTextInput v-if="noteType === 'NoteText'" :noteType="this.noteType" @addTextNote="addNote" :params="params"/>
                 <NoteImgInput v-if="noteType === 'NoteImg'" :noteType="this.noteType" @addImgNote="addNote"/>
                 <NoteTodosInput v-if="noteType === 'NoteTodos'" :noteType="this.noteType" @addTodosNote="addNote"/>
                 <NoteVideoInput v-if="noteType === 'NoteVideo'" :noteType="this.noteType" @addVideoNote="addNote"/>
@@ -25,25 +26,25 @@ export default {
             <button @click="readUrl">asdasd</button>
         </div>
     `,
-  data() {
-    return {
-        noteType: '',
-        newNote: noteService.getEmptyNote(),
-        params: this.params
-    }
-},
-created() {
+    data() {
+        return {
+            noteType: '',
+            newNote: noteService.getEmptyNote(),
+            params: this.params
+        }
+    },
+    created() {
 
-},
-methods: {
-    addNote(newNote) {
-        this.$emit('noteAdd', newNote)
+    },
+    methods: {
+        addNote(newNote) {
+            this.$emit('noteAdd', newNote)
+        }
+    },
+    components: {
+        NoteTextInput,
+        NoteImgInput,
+        NoteTodosInput,
+        NoteVideoInput
     }
-},
-components: {
-    NoteTextInput,
-    NoteImgInput,
-    NoteTodosInput,
-    NoteVideoInput
-}
-}
+}          

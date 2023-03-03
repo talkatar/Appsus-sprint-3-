@@ -1,4 +1,5 @@
 
+import { showSuccessMsg } from '../../../services/event-bus.service.js'
 import {emailService} from '../services/email.service.js'
 
 
@@ -62,7 +63,7 @@ export default {
                 .then(() => {
                     this.email='null'
                     this.displayBtn=false
-
+                    showSuccessMsg('email removec')
                     // const idx = this.emails.findIndex(email => email.id === emailId)
                     // this.emails.splice(idx, 1)
 

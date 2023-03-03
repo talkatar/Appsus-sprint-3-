@@ -49,7 +49,7 @@ ul {
     margin-inline-end: 15px; */
     overflow-y: scroll;
     overflow: auto;
-    height: 73vh;
+    height: 108vh;
 }
 
 .scroll-container::-webkit-scrollbar {

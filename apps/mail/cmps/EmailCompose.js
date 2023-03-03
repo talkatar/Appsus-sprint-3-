@@ -1,4 +1,5 @@
 
+import { eventBus } from '../../../services/event-bus.service.js'
 import { emailService } from '../services/email.service.js'
 
 
@@ -39,12 +40,12 @@ export default {
 
   , methods: {
     send() {
-
-      emailService.save(this.email)
-        .then(savedEmail => {
-          // showSuccessMsg('Book saved')
-          this.$router.push('/email?reload')
-        })
+      eventBus.emit('sent', {...this.email})
+      this.$router.push('/email')
+      // emailService.save(this.email)
+      //   .then(savedEmail => {
+      //     // showSuccessMsg('Book saved')
+      //   })
     }
 
   }

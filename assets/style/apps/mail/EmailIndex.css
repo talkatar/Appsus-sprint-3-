@@ -24,7 +24,13 @@ display: grid;
     font-size: 16px;
     text-align: center;
     color: black;
+
 }
 
 .btn-compose:hover{
     box-shadow: 0 1px 3px 0 rgb(60 64 67 / 30%), 0 4px 8px 3px rgb(60 64 67 / 15%);}
+
+    .logo{
+      padding: 10px;
+
+    }

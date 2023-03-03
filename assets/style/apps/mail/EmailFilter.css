@@ -1,20 +1,23 @@
 
 .serach-input{
-  margin-inline-start: 111px;
+  margin-inline-start: 5px;
 
     background-color: #eaf1fb;
     border: 1px solid transparent;
    border-radius: 8px;
     /* margin-left: auto;
     margin-right: auto; */
-    width: 400px;
-    max-width: 720px;
+    width: 70vw;
+    /* max-width: 720px; */
+    margin-block-start: 20px;
+
+    margin-block-end: 20px;
    
 }
 .btn-hamburger{
     position: absolute;
-    top: 132px;
-    left: 475px;
+    top: 151px;
+    right: 23vw;
     background-color: transparent;
     border-style: none;
     color: black;
@@ -66,7 +69,7 @@
 }
 .Search-options{
     display: flex;
-    margin-inline-start: 110px;
+    margin-inline-start: 5px;
     justify-content: space-between;
     gap:15px;
     flex-direction: column;
@@ -74,7 +77,8 @@
     background-color: #fff;
     z-index: 5;
     box-shadow: inset 1px 0 0 #dadce0, inset -1px 0 0 #dadce0, 0 1px 2px 0 rgb(60 64 67 / 30%), 0 1px 3px 1px rgb(60 64 67 / 15%);
-    width: 400px;
+    width: 70vw;
+    top: 189px;
     /* display: flex;
     flex-direction: column;
     flex-wrap: wrap; */

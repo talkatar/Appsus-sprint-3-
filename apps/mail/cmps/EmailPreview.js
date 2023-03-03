@@ -5,7 +5,7 @@ export default {
     props: ['email'],
     template: `
         <article class="email-preview flex align-center"> 
-                <button :class="[isStarclicked ? 'btn-star-clicked' :'btn-star-prev']" @click="handleStarred"><i class="fa-solid fa-star"></i></button>
+                <button :class="[email.isStared ? 'btn-star-clicked' :'btn-star-prev']" @click="handleStarred"><i class="fa-solid fa-star"></i></button>
 
                     <p class="email-from" @click="openMail"><span
                         :class="[email.isDraft ? 'drat' : 'undraft']"> {{ email.nameSender }}</span></p>
@@ -27,7 +27,7 @@ export default {
     , data() {
         return {
 
-            isStarclicked: false,
+            
             isReadclicked: false
         }
 
@@ -63,8 +63,6 @@ export default {
     },
 
     handleStarred() {
-        this.isStarclicked = !this.isStarclicked
-        console.log(this.email);
         this.email.isStared = !this.email.isStared
         emailService.save(this.email)
     }

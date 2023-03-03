@@ -330,6 +330,65 @@ function _createEmails() {
             isTrash: false,
 
         },
+        {
+            id: 'e118',
+            nameSender: 'Bank Hapoalim',
+            subject: ' Hey Tal we just want to ley you know some new points',
+            body: 'I wanted to see if theres anything I can do to help you get started — and make the most out of your experience',
+            isRead: true,
+            sentAt: 1521133930594,
+            removedAt: null,
+            from: 'BankHapoalim@scribehow.com',
+            to: 'user@appsus.com',
+            isStared: false,
+            isDraft: false,
+            isTrash: false
+
+
+        },
+
+        {
+            id: 'e119',
+            nameSender: 'Clalit',
+            subject: ' anuary is over. Heres whats up in your account on Splitwis',
+            body: 'Learn the fundamentals with this tutorial  and see what else you can do for free on Google Cloud ',
+            isRead: true,
+            sentAt: 1521133930594,
+            removedAt: null,
+            from: 'clalit@scribehow.com',
+            to: 'user@appsus.com',
+            isStared: false,
+            isDraft: false,
+            isTrash: false
+
+
+        },
+
+        {
+            id: 'e120',
+            nameSender: 'Social',
+            subject: ' Sound like a good idea? All you have to do is go to Social',
+            body: 'Keeping your personal info up to date can help better protect your account ',
+            isRead: true,
+            sentAt: 1521133930594,
+            removedAt: null,
+            from: 'clalit@scribehow.com',
+            to: 'user@appsus.com',
+            isStared: false,
+            isDraft: false,
+            isTrash: false
+
+
+        },
+
+        
+
+
+
+
+
+
+
 
         ]
 
@@ -352,6 +411,7 @@ function getEmptyEmail() {
         to: '',
         isStared: false,
         isDraft: false,
+        isTrash:false,
         from: 'user@appsus.com',
 
     }

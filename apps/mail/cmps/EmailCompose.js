@@ -35,6 +35,10 @@ export default {
     }
   },
   mounted() {
+    if (!this.query) {
+      this.$refs.emailBody.value = ''
+      return
+    }
     this.$refs.emailBody.value = this.query
   },
 

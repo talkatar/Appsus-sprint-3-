@@ -23,8 +23,30 @@ export default {
                 <NoteTodosInput v-if="noteType === 'NoteTodos'" :noteType="this.noteType" @addTodosNote="addNote"/>
                 <NoteVideoInput v-if="noteType === 'NoteVideo'" :noteType="this.noteType" @addVideoNote="addNote"/>
             </section>
+            <button @click="readUrl">asdasd</button>
         </div>
     `,
+    data() {
+        return {
+            noteType: '',
+            newNote: noteService.getEmptyNote(),
+            params: this.params
+        }
+    },
+    created() {
+
+    },
+    methods: {
+        addNote(newNote) {
+            this.$emit('noteAdd', newNote)
+        }
+    },
+    components: {
+        NoteTextInput,
+        NoteImgInput,
+        NoteTodosInput,
+        NoteVideoInput
+    },
     data() {
         return {
             noteType: '',

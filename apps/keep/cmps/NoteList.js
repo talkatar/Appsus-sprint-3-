@@ -60,13 +60,13 @@ export default {
     },
     computed: {
         filteredNotes() {
-            if(!this.filterBy) return this.notes
+            if (!this.filterBy) return this.notes
             const regex = new RegExp(this.filterBy.txt, 'i')
             let type = this.filterBy.type
-            if(this.filterBy.type === 'all') {
+            if (this.filterBy.type === 'all') {
                 return this.notes.filter(note => regex.test(note.info.title) || regex.test(note.info.txt))
             } else {
-                return this.notes.filter(note => 
+                return this.notes.filter(note =>
                     note.type === type && (regex.test(note.info.title) || regex.test(note.info.txt)))
             }
         },

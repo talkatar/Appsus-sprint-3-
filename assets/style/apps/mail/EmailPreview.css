@@ -32,8 +32,7 @@
 
     margin-inline-end: 25px;
 }
-
-.btn-delete ,.btn-toggle-read,.btn-star-prev,.btn-star-clicked {
+.btn-delete ,.btn-toggle-read,.btn-star-prev,.btn-star-clicked,.btn-star-clicked,.btn-star-prev {
     display: none;
    background-color: transparent;
     border-style: none;
@@ -60,8 +59,14 @@ margin-inline-start: 10px;
 
 }
 
-btn-star-prev
 
+.drat{
+color:red
+}
+
+.undraft{
+    color: black;
+}
 
 .btn-toggle-read{
     margin-inline-end: 10px
@@ -71,7 +76,8 @@ li:hover .btn-delete ,li:hover .btn-toggle-read {
     display: block;
 } 
 
- .btn-delete:hover ,.btn-toggle-read:hover ,.btn-star-prev:hover,.btn-star-clicked:hover {
+ .btn-delete:hover ,.btn-toggle-read:hover ,.btn-star-prev:hover,
+ .btn-star-clicked:hover ,.btn-star-clicked:hover {
     background-color: #dfe4ec;
     border: 1px solid rgb(207, 206, 206);
 }
@@ -83,7 +89,6 @@ li:hover .btn-delete ,li:hover .btn-toggle-read {
     display: none;
   }
   
-  /* Style the custom tooltip */
   .btn-delete:hover::before  {
     content: 'Trash';
     background-color: #333;
@@ -93,7 +98,63 @@ li:hover .btn-delete ,li:hover .btn-toggle-read {
     font-size: 12px;
     position: absolute;
     z-index: 1;
-    right:130px;
-     /* bottom:50vh;  */
+    right:190px;
 
   }
+
+
+  .btn-star-prev[Starred]::after {
+    content: "";
+    display: none;
+  }
+  
+  .btn-star-prev:hover::before  {
+    content: 'Starred';
+    background-color: #333;
+    color: #fff;
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 12px;
+    position: absolute;
+    z-index: 1;
+    left:180px;
+
+  }
+
+  .btn-star-clicked[Unstarred]::after {
+    content: "";
+    display: none;
+  }
+  
+  .btn-star-clicked:hover::before  {
+    content: 'Unstarred';
+    background-color: #333;
+    color: #fff;
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 12px;
+    position: absolute;
+    z-index: 1;
+    left:180px;
+
+  }
+
+  /* fa-solid fa-envelope' :'fa-solid fa-envelope-open */
+
+  /* .fa-solid-fa-envelope [Trash]::after {
+    content: "asdasd";
+    display: none;
+  }
+  
+  .fa-solid-fa-envelope:hover::before  {
+    content: 'asdasdasd';
+    background-color: #333;
+    color: #fff;
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 12px;
+    position: absolute;
+    z-index: 1;
+    left:180px;
+
+  } */

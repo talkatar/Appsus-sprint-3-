@@ -4,6 +4,7 @@ import EmailList from '../cmps/EmailList.js'
 import EmailFilter from '../cmps/EmailFilter.js'
 import EmailFolderList from '../cmps/EmailFolderList.js'
 import EmailCompose from '../cmps/EmailCompose.js'
+import { showErrorMsg, showSuccessMsg } from '../../../services/event-bus.service.js'
 
 
 
@@ -65,6 +66,14 @@ methods: {
                 const idx = this.emails.findIndex(email => email.id === emailId)
                     this.emails.splice(idx, 1)
                 })
+        .then(savedEmail => {
+                    showSuccessMsg('Conversation moved to Trash.'
+                        )
+                })
+            .catch(err => {
+                showErrorMsg('Conversation moved to Trash failed')
+            })
+           
            
         },
 
@@ -131,6 +140,10 @@ computed: {
 
             if(status==='trash'){
                 filteredEmails = filteredEmails.filter(email => email.isTrash)
+            }
+
+            if(status==='draft'){
+                filteredEmails = filteredEmails.filter(email => email.isDraft)
             }
         }
 

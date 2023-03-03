@@ -6,14 +6,14 @@ import NoteFilter from "../cmps/NoteFilter.js"
 export default {
     name: 'NoteList',
     emits: ['remove', 'noteAdd', 'duplicate', 'setColor', 'changePinStatus'],
-    props: ['notes', 'query'],
+    props: ['notes', 'params'],
     template: `
         <div class="notes">
             <section class="notes-filter">
                 <NoteFilter @setFilter="filterNotes"/>
             </section>
             <section class="note-page">
-                <AddNote @noteAdd="AddNote" :query="query"/>
+                <AddNote @noteAdd="AddNote" :params="listParams"/>
                 <section class="note-container">
                     <p v-if="pinnedNotes.length > 0">pinned</p>
                     <NotePreview v-for="note in pinnedNotes" 

@@ -18,7 +18,7 @@ export default {
                 <button @click="noteType = ''"><i class="fa-regular fa-eye-slash"></i></button>
             </section>
             <section class="note-inputs">
-            <NoteTextInput v-if="noteType === 'NoteText'" :noteType="this.noteType" @addTextNote="addNote" :params="params"/>
+                <NoteTextInput v-if="noteType === 'NoteText'" :noteType="this.noteType" @addTextNote="addNote" :params="params"/>
                 <NoteImgInput v-if="noteType === 'NoteImg'" :noteType="this.noteType" @addImgNote="addNote"/>
                 <NoteTodosInput v-if="noteType === 'NoteTodos'" :noteType="this.noteType" @addTodosNote="addNote"/>
                 <NoteVideoInput v-if="noteType === 'NoteVideo'" :noteType="this.noteType" @addVideoNote="addNote"/>
@@ -47,4 +47,4 @@ export default {
         NoteTodosInput,
         NoteVideoInput
     }
-}          
+}

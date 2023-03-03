@@ -12,7 +12,7 @@ export default {
     template: `
     <!-- <div class="container"> -->
         <div class="flex">
-        <img class="logo" src='../../../assets/img/Gmail_Logo_64px.png'/>
+        <img class="logo" src='assets/img/Gmail_Logo_64px.png'/>
         <!-- <RouterLink to="/email"><img class="logo" src='../../../assets/img/Gmail_Logo_64px.png'/> </RouterLink> -->
         <EmailFilter @filter="setFilterBy"/>
 
@@ -34,7 +34,6 @@ export default {
         <RouterView />
 
 
-        <!-- </div> -->
 
 
 
@@ -60,12 +59,12 @@ export default {
             .then(emails => {
                 console.log(emails);
                 this.emails = emails
-                console.log(emails);
             })
 
         eventBus.on('sent', this.sent)
-        
+        eventBus.on('drat', this.drat)
 
+        
     },
 
     methods: {
@@ -74,7 +73,6 @@ export default {
             const email = this.emails.find(email => email.id === emailId)
 
             if (email.isTrash) {
-                console.log('asd');
                 emailService.remove(emailId)
                     .then(() => {
 
@@ -88,17 +86,13 @@ export default {
                     .catch(err => {
                         showErrorMsg('Conversation deleted forever failed.')
                     })
-                // this.filteredEmails()
             }
             else {
                 email.isTrash = true
                 emailService.save(email).then(saveEmail =>{
                     showSuccessMsg('Conversation moved to Trash.')
                 })
-                // this.filteredEmails()
-
-                // .catch(err => {
-                //     showErrorMsg('Conversation moved to Trash failed.')})
+               
             }
 
         },
@@ -129,7 +123,14 @@ export default {
                 .then(sentEmail => {
                     this.emails.unshift(sentEmail)
                 })
+        },
+        drat(email){
+            emailService.save(email)
+                .then(sentEmail => {
+                    this.emails.unshift(sentEmail)
+                })
         }
+        
 
     },
 
@@ -160,11 +161,11 @@ export default {
                 }
 
                 if (status === 'sent') {
-                    filteredEmails = filteredEmails.filter(email => email.from === emailService.loggedinUser.email)
+                    filteredEmails = filteredEmails.filter(email => email.from === emailService.loggedinUser.email&& !email.isTrash)
                 }
 
                 if (status === 'starred') {
-                    filteredEmails = filteredEmails.filter(email => email.isStared)
+                    filteredEmails = filteredEmails.filter(email => email.isStared&& !email.isTrash)
                 }
 
                 if (status === 'trash') {
@@ -172,7 +173,7 @@ export default {
                 }
 
                 if (status === 'draft') {
-                    filteredEmails = filteredEmails.filter(email => email.isDraft)
+                    filteredEmails = filteredEmails.filter(email => email.isDraft&& !email.isTrash)
                 }
             }
 

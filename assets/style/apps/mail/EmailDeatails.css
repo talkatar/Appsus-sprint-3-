@@ -67,7 +67,6 @@ margin-inline-start: 10px;
 .btn-delete-details:hover
  {
    background-color: #dfe4ec;
-   border: 1px solid rgb(207, 206, 206);
 }
 .btn-delete-details[Trash]::after {
     content: "";

@@ -32,7 +32,7 @@
 
     margin-inline-end: 25px;
 }
-.btn-delete ,.btn-toggle-read,.btn-star-prev,.btn-star-clicked,.btn-star-clicked,.btn-star-prev {
+.btn-delete ,.btn-toggle-read,.btn-star-prev,.btn-star-clicked,.btn-star-clicked,.btn-star-prev,.create-note {
     display: none;
    background-color: transparent;
     border-style: none;
@@ -42,7 +42,7 @@
      padding: 6px 9px 6px 6px; 
      border-radius: 50%; 
     transition: all 0.2s;
-margin-inline-start: 10px;
+    margin-inline-start: 10px;
 ;}
 
 .btn-star-prev{
@@ -68,18 +68,16 @@ color:red
     color: black;
 }
 
-.btn-toggle-read{
-    margin-inline-end: 10px
-}
 
-li:hover .btn-delete ,li:hover .btn-toggle-read {
+
+li:hover .btn-delete ,li:hover .btn-toggle-read, li:hover .create-note {
     display: block;
 } 
 
  .btn-delete:hover ,.btn-toggle-read:hover ,.btn-star-prev:hover,
- .btn-star-clicked:hover ,.btn-star-clicked:hover {
+ .btn-star-clicked:hover ,.btn-star-clicked:hover,.create-note:hover {
     background-color: #dfe4ec;
-    border: 1px solid rgb(207, 206, 206);
+    /* border: 1px solid rgb(207, 206, 206); */
 }
 
 
@@ -98,7 +96,7 @@ li:hover .btn-delete ,li:hover .btn-toggle-read {
     font-size: 12px;
     position: absolute;
     z-index: 1;
-    right:190px;
+    right:250px;
 
   }
 
@@ -139,15 +137,14 @@ li:hover .btn-delete ,li:hover .btn-toggle-read {
 
   }
 
-  /* fa-solid fa-envelope' :'fa-solid fa-envelope-open */
 
-  /* .fa-solid-fa-envelope [Trash]::after {
-    content: "asdasd";
+  .create-note [Trash]::after {
+    content: "Make a keep";
     display: none;
   }
   
-  .fa-solid-fa-envelope:hover::before  {
-    content: 'asdasdasd';
+  .create-note:hover::before  {
+    content: 'Make a keep';
     background-color: #333;
     color: #fff;
     padding: 5px;
@@ -155,6 +152,6 @@ li:hover .btn-delete ,li:hover .btn-toggle-read {
     font-size: 12px;
     position: absolute;
     z-index: 1;
-    left:180px;
+    right:175px;
 
-  } */
+  }

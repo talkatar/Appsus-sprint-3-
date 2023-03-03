@@ -41,7 +41,6 @@
   
  .btn-sent:hover,.btn-inbox:hover,.btn-draft:hover,.btn-trash:hover,.btn-starred:hover {
     background-color: #dfe4ec;
-    border: 1px solid rgb(207, 206, 206);
   }
 
 
@@ -140,7 +139,13 @@
         z-index: 1;
         left:60px
       }
-          
+      .counting{
+        display: inline;
+      }
+      .notcounting{
+        display: none;
+      }
+  
   
 
   

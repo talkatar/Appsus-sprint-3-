@@ -10,7 +10,7 @@ export default {
     <div>
     <button class="link-back"><RouterLink   to="/email"><i class="fa-solid fa-arrow-left"></i> </RouterLink></button>
 
-    <button class="btn-delete-details" v-if=this.displayBtn @click="removeEmail(email.id)"><i class="fa-solid fa-trash"></i></button>
+    <button class="btn-delete-details" v-if=this.displayBtn @click="removeEmail(email)"><i class="fa-solid fa-trash"></i></button>
     </div>
            
 
@@ -57,24 +57,15 @@ export default {
     }
 
     ,methods: {
-        removeEmail(emailId) {
-            console.log(emailId);
-            emailService.remove(emailId)
+        removeEmail(email) {
+            console.log(email);
+            email.isTrash=true
+            emailService.save(email)
                 .then(() => {
-                    this.email='null'
-                    this.displayBtn=false
-                    showSuccessMsg('email removec')
-                    // const idx = this.emails.findIndex(email => email.id === emailId)
-                    // this.emails.splice(idx, 1)
+                    this.$router.push('/email')
 
                 })
-                    // eventBusService.emit('show-msg', { txt: 'Email removed', type: 'success' })
-    
-                // })
-                // .catch(err=>{
-                //     eventBusService.emit('show-msg', { txt: 'Email remove failed', type: 'error' })
-               
-                //  })
+                 
         },
 
        

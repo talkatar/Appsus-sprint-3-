@@ -1,6 +1,6 @@
 
 .serach-input{
-  margin-inline-start: 5px;
+  margin-inline-start: 10px;
 
     background-color: #eaf1fb;
     border: 1px solid transparent;
@@ -16,8 +16,8 @@
 }
 .btn-hamburger{
     position: absolute;
-    top: 151px;
-    right: 23vw;
+    top: 155px;
+    right: 28vw;
     background-color: transparent;
     border-style: none;
     color: black;
@@ -69,7 +69,7 @@
 }
 .Search-options{
     display: flex;
-    margin-inline-start: 5px;
+    margin-inline-start: 10px;
     justify-content: space-between;
     gap:15px;
     flex-direction: column;

@@ -17,7 +17,7 @@ export default {
                 <span><button    class="btn-delete"  @click.stop="removeEmail(email.id)"><i class="fa-solid fa-trash"></i></button></span> 
                 <span><button title="Mark as read" class="btn-toggle-read"  @click.stop="handleRead">
                     <i :class="[isReadclicked ? 'fa-solid fa-envelope' :'fa-solid fa-envelope-open']"></i></button></span> 
-                    <span><button @click="creatNote"><i class="fa-solid fa-share"></i> </button></span>
+                    <span><button class="create-note" @click="creatNote"><i class="fa-solid fa-share"></i> </button></span>
 
                 <p class="date">{{ formatDate }}</p>
         </article>
@@ -43,9 +43,9 @@ export default {
         },
 
         handleRead() {
+            console.log('asd');
 
             this.isReadclicked = !this.isReadclicked
-            console.log(this.email);
             this.email.isRead = !this.email.isRead
             emailService.save(this.email)
                 .then(savedEmail => {
@@ -84,7 +84,6 @@ export default {
 
 
         const now = new Date().getTime();
-        console.log(now);
 
         const diff = now - this.email.sentAt;
 

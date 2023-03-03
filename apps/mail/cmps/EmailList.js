@@ -8,9 +8,6 @@ export default {
         <section class="email-list scroll-container">
             <ul>
                 <li :class="[email.isRead ? 'read' : 'unread']" v-for="email in emails" :key="email.id">
-                <!-- :class="[email.isRead ? 'read' : 'unread']" -->
-                <!-- class="{{emailClass}}" -->
-                <!-- :class="[email.isRead ? 'read' : (email.isStared ? btn-star-clicked  : unread)]" -->
                 <EmailPreview :email="email" @removeEmail="removeEmail"/>  
                     
 

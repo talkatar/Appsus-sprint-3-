@@ -1,10 +1,11 @@
-import { eventBus } from '../../../services/event-bus.service.js'
+import { eventBus} from '../../../services/event-bus.service.js'
 import { emailService } from '../services/email.service.js'
 
 
 export default {
 
   template: `
+  <button @click="closeCompose" class="btn-close-compose">X</button>
   <form @submit.prevent="send">
     <div class="new-mail">
     <div class="header">
@@ -27,9 +28,7 @@ export default {
 
   data() {
     return {
-      // to: '',
-      // subject: '',
-      // body: '',
+      
       email: emailService.getEmptyEmail()
 
     }
@@ -46,10 +45,21 @@ export default {
     send() {
 
       emailService.save(this.email)
-        .then(savedEmail => {
-          // showSuccessMsg('Book saved')
-          this.$router.push('/email?reload')
-        })
+      .then(savedEmail => {
+        eventBus.emit('sent',savedEmail)
+        this.$router.push('/email')
+              })
+    },
+    closeCompose(){
+
+      this.email.isDraft=true
+      emailService.save(this.email)
+      .then(darftEmail => {
+        eventBus.emit('drat',darftEmail)
+        this.$router.push('/email')
+              })
+              
+
     }
 
   },

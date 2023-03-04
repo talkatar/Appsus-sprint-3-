@@ -40,7 +40,7 @@ ul {
 .scroll-container {
     overflow-y: scroll;
     overflow: auto;
-    height: 107vh;
+    height: 67vh;
 }
 
 .scroll-container::-webkit-scrollbar {

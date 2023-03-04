@@ -3,7 +3,6 @@
     grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
     gap: 10px;
     border-radius: 37px;
-
     padding: 30px;
     background-color: lightgray;
     list-style-type: none;

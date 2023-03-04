@@ -1,6 +1,5 @@
 import EmailPreview from './EmailPreview.js'
 import EmailDetails from '../pages/EmailDetails.js'
-import { emailService } from '../services/email.service.js'
 
 export default {
     props: ['emails'],
@@ -9,37 +8,27 @@ export default {
             <ul>
                 <li :class="[email.isRead ? 'read' : 'unread']" v-for="email in emails" :key="email.id">
                 <EmailPreview :email="email" @removeEmail="removeEmail"/>  
-                    
-
                 </li>
             </ul>
         </section>
     `,
-    methods: {
 
+    methods: {
         removeEmail(emailId) {
             this.$emit('removeEmail', emailId)
         },
-
-
     }
-
-
 
     , computed: {
         emailClass() {
             if (email.isRead) return 'read'
             if (!email.isRead) return 'unread'
-            //  if (email.isStared) return  'btn-star-clicked.read'
         }
-
     }
 
     , created() {
 
     }
-
-
     ,
     components: {
         EmailPreview,

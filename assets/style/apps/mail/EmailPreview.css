@@ -1,8 +1,7 @@
 .email-from {
-   width: 190px;
-   margin-inline-start: 20px;
+    width: 190px;
+    margin-inline-start: 20px;
 }
-
 
 
 .content {
@@ -11,11 +10,9 @@
 }
 
 .email-subject {
-    /* width:100px; */
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    
 }
 
 .email-body {
@@ -28,66 +25,57 @@
     text-overflow: ellipsis;
 }
 
-.date{
-
+.date {
     margin-inline-end: 25px;
 }
-.btn-delete ,.btn-toggle-read,.btn-star-prev,.btn-star-clicked,.btn-star-clicked,.btn-star-prev,.create-note {
+
+.btn-delete, .btn-toggle-read, .btn-star-prev, .btn-star-clicked, .btn-star-clicked, .btn-star-prev, .create-note {
     display: none;
-   background-color: transparent;
+    background-color: transparent;
     border-style: none;
     color: black;
-     font-size: 18px;
+    font-size: 18px;
     cursor: pointer;
-     padding: 6px 9px 6px 6px; 
-     border-radius: 50%; 
+    padding: 6px 9px 6px 6px;
+    border-radius: 50%;
     transition: all 0.2s;
     margin-inline-start: 10px;
-;}
-
-.btn-star-prev{
-    margin-inline-start: 10px;
-    display: block;
-
-
+    ;
 }
 
-.btn-star-clicked{
+.btn-star-prev {
+    margin-inline-start: 10px;
+    display: block;
+}
+
+.btn-star-clicked {
     margin-inline-start: 10px;
     display: block;
     color: rgb(245, 215, 80);
-
 }
 
-
-.drat{
-color:red
+.drat {
+    color: red
 }
 
-.undraft{
+.undraft {
     color: black;
 }
 
-
-
-li:hover .btn-delete ,li:hover .btn-toggle-read, li:hover .create-note {
+li:hover .btn-delete, li:hover .btn-toggle-read, li:hover .create-note {
     display: block;
-} 
-
- .btn-delete:hover ,.btn-toggle-read:hover ,.btn-star-prev:hover,
- .btn-star-clicked:hover ,.btn-star-clicked:hover,.create-note:hover {
-    background-color: #dfe4ec;
-    /* border: 1px solid rgb(207, 206, 206); */
 }
 
-
+.btn-delete:hover, .btn-toggle-read:hover, .btn-star-prev:hover, .btn-star-clicked:hover, .btn-star-clicked:hover, .create-note:hover {
+    background-color: #dfe4ec;
+}
 
 .btn-delete[Trash]::after {
     content: "";
     display: none;
-  }
-  
-  .btn-delete:hover::before  {
+}
+
+.btn-delete:hover::before {
     content: 'Trash';
     background-color: #333;
     color: #fff;
@@ -96,17 +84,15 @@ li:hover .btn-delete ,li:hover .btn-toggle-read, li:hover .create-note {
     font-size: 12px;
     position: absolute;
     z-index: 1;
-    right:250px;
+    right: 250px;
+}
 
-  }
-
-
-  .btn-star-prev[Starred]::after {
+.btn-star-prev[Starred]::after {
     content: "";
     display: none;
-  }
-  
-  .btn-star-prev:hover::before  {
+}
+
+.btn-star-prev:hover::before {
     content: 'Starred';
     background-color: #333;
     color: #fff;
@@ -115,16 +101,15 @@ li:hover .btn-delete ,li:hover .btn-toggle-read, li:hover .create-note {
     font-size: 12px;
     position: absolute;
     z-index: 1;
-    left:180px;
+    left: 180px;
+}
 
-  }
-
-  .btn-star-clicked[Unstarred]::after {
+.btn-star-clicked[Unstarred]::after {
     content: "";
     display: none;
-  }
-  
-  .btn-star-clicked:hover::before  {
+}
+
+.btn-star-clicked:hover::before {
     content: 'Unstarred';
     background-color: #333;
     color: #fff;
@@ -133,17 +118,15 @@ li:hover .btn-delete ,li:hover .btn-toggle-read, li:hover .create-note {
     font-size: 12px;
     position: absolute;
     z-index: 1;
-    left:180px;
+    left: 180px;
+}
 
-  }
-
-
-  .create-note [Trash]::after {
+.create-note [Trash]::after {
     content: "Make a keep";
     display: none;
-  }
-  
-  .create-note:hover::before  {
+}
+
+.create-note:hover::before {
     content: 'Make a keep';
     background-color: #333;
     color: #fff;
@@ -152,6 +135,5 @@ li:hover .btn-delete ,li:hover .btn-toggle-read, li:hover .create-note {
     font-size: 12px;
     position: absolute;
     z-index: 1;
-    right:175px;
-
-  }
+    right: 175px;
+}

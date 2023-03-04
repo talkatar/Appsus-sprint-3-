@@ -18,22 +18,12 @@ export const emailService = {
     save,
     getEmptyEmail,
     loggedinUser
-    // addReview,
-    // removeReview,
-    // addGoogleEmail
+    
 }
 
 function query(filterBy = {}) {
     return storageService.query(EMAIL_KEY)
         .then(emails => {
-            console.log(emails);
-            // if (filterBy.txt) {
-            //     const regex = new RegExp(filterBy.txt, 'i')
-            //     emails = emails.filter(email => regex.test(email.vendor))
-            // }
-            // if (filterBy.minSpeed) {
-            //     emails = emails.filter(email => email.maxSpeed >= filterBy.minSpeed)
-            // }
             return emails
         })
 }
@@ -41,7 +31,6 @@ function query(filterBy = {}) {
 
 function get(emailId) {
     return storageService.get(EMAIL_KEY, emailId)
-    // .then(_setNextPrevEmailId)
 }
 
 function remove(emailId) {
@@ -380,23 +369,11 @@ function _createEmails() {
 
 
         },
-
-        
-
-
-
-
-
-
-
-
         ]
 
         utilService.saveToStorage(EMAIL_KEY, emails)
     }
 }
-
-
 
 
 function getEmptyEmail() {
@@ -412,7 +389,7 @@ function getEmptyEmail() {
         isRead: true,
         isStared: false,
         isDraft: false,
-        isTrash:false,
+        isTrash: false,
         from: 'user@appsus.com',
 
     }

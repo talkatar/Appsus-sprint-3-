@@ -1,152 +1,134 @@
-/* .btn-list{
-    display: flex;
-    flex-direction: column;
 
-} */
 .sidebar {
-    width: 118px;
-    background-color: #f9f9f9;
-    border-right: 1px solid #e0e0e0;
-    flex-shrink: 0;
-    height:100vh ;
-  }
+  width: 118px;
+  background-color: #f9f9f9;
+  border-right: 1px solid #e0e0e0;
+  flex-shrink: 0;
+  height: 100vh;
+}
 
+.btn-sent, .btn-inbox, .btn-draft, .btn-trash, .btn-starred {
+  background-color: transparent;
+  border-style: none;
+  color: black;
+  font-size: 25px;
+  cursor: pointer;
+  padding: 11px 11px 11px 11px;
+  border-radius: 50%;
+  transition: 0.2s;
+}
 
-.btn-sent,.btn-inbox,.btn-draft,.btn-trash,.btn-starred {
-    background-color: transparent;
-    border-style: none;
-    color: black;
-    font-size: 25px;
-    cursor: pointer;
-    padding: 11px 11px 11px 11px; 
-    border-radius: 50%;
-    transition:  0.2s;
-  }
-  .btn-sent{
-    padding: 12px 15px 12px 12px; 
-    font-size: 24px;
-  }
+.btn-sent {
+  padding: 12px 15px 12px 12px;
+  font-size: 24px;
+}
 
-  .btn-draft{
-    font-size: 22px;
-    margin-inline-start: 5px;
-  }
-  .btn-trash{
-    margin-inline-start: 2px;
-  }
+.btn-draft {
+  font-size: 22px;
+  margin-inline-start: 5px;
+}
 
-  .btn-inbox{
-    border-radius: 20px;
-    }
-  
- .btn-sent:hover,.btn-inbox:hover,.btn-draft:hover,.btn-trash:hover,.btn-starred:hover {
-    background-color: #dfe4ec;
-  }
+.btn-trash {
+  margin-inline-start: 2px;
+}
 
+.btn-inbox {
+  border-radius: 20px;
+}
 
+.btn-sent:hover, .btn-inbox:hover, .btn-draft:hover, .btn-trash:hover, .btn-starred:hover {
+  background-color: #dfe4ec;
+}
 
-  /* Hide the default tooltip */
-  .btn-trash[Trash]::after {
-    content: "";
-    display: none;
-  }
-  
-  /* Style the custom tooltip */
-  .btn-trash:hover::before  {
-    content: 'Trash';
-    background-color: #333;
-    color: #fff;
-    padding: 5px;
-    border-radius: 5px;
-    font-size: 12px;
-    position: absolute;
-    z-index: 1;
-    left:60px
-  }
+.btn-trash[Trash]::after {
+  content: "";
+  display: none;
+}
 
+.btn-trash:hover::before {
+  content: 'Trash';
+  background-color: #333;
+  color: #fff;
+  padding: 5px;
+  border-radius: 5px;
+  font-size: 12px;
+  position: absolute;
+  z-index: 1;
+  left: 60px
+}
 
-    /* Hide the default tooltip */
-    .btn-inbox[Inbox]::after {
-        content: '';
-        display: none;
-      }
-      
-      /* Style the custom tooltip */
-      .btn-inbox:hover::before  {
-        content: 'Inbox';
-        background-color: #333;
-        color: #fff;
-        padding: 5px;
-        border-radius: 5px;
-        font-size: 12px;
-        position: absolute;
-        z-index: 1;
-        left:100px
-      }
-  
-      
-        /* Hide the default tooltip */
-  .btn-starred[Starred]::after {
-    content: "";
-    display: none;
-  }
-  
-  /* Style the custom tooltip */
-  .btn-starred:hover::before  {
-    content: 'Starred';
-    background-color: #333;
-    color: #fff;
-    padding: 5px;
-    border-radius: 5px;
-    font-size: 12px;
-    position: absolute;
-    z-index: 1;
-    left:60px
-  }
-    /* Hide the default tooltip */
-    .btn-sent[Sent]::after {
-        content: "";
-        display: none;
-      }
-      
-      /* Style the custom tooltip */
-      .btn-sent:hover::before  {
-        content: 'Sent';
-        background-color: #333;
-        color: #fff;
-        padding: 5px;
-        border-radius: 5px;
-        font-size: 12px;
-        position: absolute;
-        z-index: 1;
-        left:60px
-      }
-    /* Hide the default tooltip */
-    .btn-draft[Draft]::after {
-        content: "";
-        display: none;
-      }
-      
-      /* Style the custom tooltip */
-      .btn-draft:hover::before  {
-        content: 'Draft';
-        background-color: #333;
-        color: #fff;
-        padding: 5px;
-        border-radius: 5px;
-        font-size: 12px;
-        position: absolute;
-        z-index: 1;
-        left:60px
-      }
-      .counting{
-        display: inline;
-      }
-      .notcounting{
-        display: none;
-      }
-  
-  
+.btn-inbox[Inbox]::after {
+  content: '';
+  display: none;
+}
 
-  
-  
+.btn-inbox:hover::before {
+  content: 'Inbox';
+  background-color: #333;
+  color: #fff;
+  padding: 5px;
+  border-radius: 5px;
+  font-size: 12px;
+  position: absolute;
+  z-index: 1;
+  left: 100px
+}
+
+.btn-starred[Starred]::after {
+  content: "";
+  display: none;
+}
+
+.btn-starred:hover::before {
+  content: 'Starred';
+  background-color: #333;
+  color: #fff;
+  padding: 5px;
+  border-radius: 5px;
+  font-size: 12px;
+  position: absolute;
+  z-index: 1;
+  left: 60px
+}
+
+.btn-sent[Sent]::after {
+  content: "";
+  display: none;
+}
+
+.btn-sent:hover::before {
+  content: 'Sent';
+  background-color: #333;
+  color: #fff;
+  padding: 5px;
+  border-radius: 5px;
+  font-size: 12px;
+  position: absolute;
+  z-index: 1;
+  left: 60px
+}
+
+.btn-draft[Draft]::after {
+  content: "";
+  display: none;
+}
+
+.btn-draft:hover::before {
+  content: 'Draft';
+  background-color: #333;
+  color: #fff;
+  padding: 5px;
+  border-radius: 5px;
+  font-size: 12px;
+  position: absolute;
+  z-index: 1;
+  left: 60px
+}
+
+.counting {
+  display: inline;
+}
+
+.notcounting {
+  display: none;
+}

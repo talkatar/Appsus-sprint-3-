@@ -1,36 +1,27 @@
-
-
- .container {
-display: grid; 
-    /* flex-direction: row; 
-    height: 80vh;  */
-  } 
-
-
-
-
-
-.btn-compose{
-    display: flex;
-    gap: 10px;
-    background-color: #c2e7ff;
-    border-radius: 16px;
-    display: inline-flex;
-    font-weight: 500;
-    height: 60px;
-    min-width: 56px;
-    overflow: hidden;
-    padding: 18px 12px 2px 12px;
-    font-size: 16px;
-    text-align: center;
-    color: black;
-
+.container {
+  display: grid;
 }
 
-.btn-compose:hover{
-    box-shadow: 0 1px 3px 0 rgb(60 64 67 / 30%), 0 4px 8px 3px rgb(60 64 67 / 15%);}
+.btn-compose {
+  display: flex;
+  gap: 10px;
+  background-color: #c2e7ff;
+  border-radius: 16px;
+  display: inline-flex;
+  font-weight: 500;
+  height: 60px;
+  min-width: 56px;
+  overflow: hidden;
+  padding: 18px 12px 2px 12px;
+  font-size: 16px;
+  text-align: center;
+  color: black;
+}
 
-    .logo{
-      padding: 10px;
+.btn-compose:hover {
+  box-shadow: 0 1px 3px 0 rgb(60 64 67 / 30%), 0 4px 8px 3px rgb(60 64 67 / 15%);
+}
 
-    }
+.logo {
+  padding: 10px;
+}

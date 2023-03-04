@@ -12,6 +12,9 @@
 @import 'cmps/HomePage.css';
 @import 'cmps/AppHeader.css';
 @import 'cmps/UserMsg.css';
+@import 'cmps/AboutUs.css';
+@import 'cmps/AppFooter.css';
+
 
 /* Apps */
 
@@ -36,3 +39,8 @@
 @import 'apps/note/notes.css';
 @import 'apps/note/note-page.css';
 @import 'apps/note/notes-filter.css';
+
+
+/* MEDIA QUERIS */
+
+@import 'apps/mail/MqEmail.css';

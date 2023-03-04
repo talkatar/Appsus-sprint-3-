@@ -1,7 +1,68 @@
 .app-header {
-  background-color: var(--clr5);
-  color: var(--secondary-clr1);
+  background-color: #c4cbd4;
+  color: black;
   padding: 1em;
+  border-radius: 20px;
+    border-radius: 37px;
+    font-size: 1.5em;
+    font-family: poppins;
+
+}
+
+.app-header h1 {
+  margin-inline-end: 16vw;}
+
+
+.app-header div {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.app-header div nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap:20px;
+}
+
+.app-header img {
+  width: 100%;
+}
+
+.app-header a {
+  display: inline-block;
+  width: 80px;
+}
+.app-header a:hover{
+  scale: 1.2;
+
+}
+
+.app-header section {
+  width: 25vw;
+  padding: 0;
+  margin: 0;
+}
+
+  /* .gmail-logo-header{
+    margin-block-end: 1vh;
+}  */
+
+.keep-logo-header{
+  scale:0.85
+
+}
+
+/* .book-logo-header{
+  scale:0.2
+
+}  */
+
+
+.app-logo{
+  background-color:blue;
+  scale: 0.3;
 }
 
 @media(max-width: 720px) {

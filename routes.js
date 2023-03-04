@@ -42,6 +42,7 @@ const routerOptions = {
 			path: '/keep/:noteId',
 			component: NoteEdit,
 		},
+		
 	],
 }
 

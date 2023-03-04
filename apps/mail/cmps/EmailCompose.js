@@ -6,7 +6,7 @@ export default {
 
   template: `
 
-  <button @click="closeCompose" class="btn-close-compose">X</button>
+  <button @click="closeCompose" class="btn-close-compose"><i class="fa-solid fa-x"></i></button>
   <form @submit.prevent="send">
     <div class="new-mail">
     <div class="header">
@@ -55,6 +55,7 @@ export default {
 
     , closeCompose() {
       this.email.isDraft = true
+      this.email.nameSender = 'Draft'
       emailService.save(this.email)
         .then(darftEmail => {
           eventBus.emit('drat', darftEmail)

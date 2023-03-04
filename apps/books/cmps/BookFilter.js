@@ -1,13 +1,13 @@
 export default {
     template: `
         <section class="book-filter">
-            <input 
+            <input class="book-filter-input"
                 v-model="filterBy.title"
                 @input="filter" 
                 placeholder="Search by title "
                 type="text" />
 
-                <input 
+                <input class="book-filter-range"
                 v-model="filterBy.price"
                 @input="filter"
                 type="range"

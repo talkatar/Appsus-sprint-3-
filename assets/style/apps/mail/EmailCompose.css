@@ -6,7 +6,7 @@
   border: 1px solid #ddd;
   border-radius: 5px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-  width: 400px;
+  width: 50vw;
 }
 
 .new-mail .header {
@@ -53,4 +53,14 @@
   padding-left: 12px;
   padding-top: 12px;
   background-color: #f2f6fc;
+}
+
+
+.btn-close-compose{
+  position: absolute;
+  background-color: transparent;
+  border-radius: 30px;
+  right: 6vw;
+  bottom: 65vh;
+  z-index: 20;
 }

@@ -32,7 +32,7 @@ Finally, our book store offers a wide range of books from different genres, so y
 
 <hr>
 <p>In summary, With three powerful apps in one convenient package, our app is the ultimate tool for anyone looking to stay organized and entertained
-. <div>Download our app today and start taking control of your daily tasks!</div>
+<div>Download our app today and start taking control of your daily tasks!</div>
 </p>
 
 </section>

@@ -2,15 +2,20 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
     gap: 10px;
+    border-radius: 37px;
 
     padding: 30px;
-    background-color: lightblue;
+    background-color: lightgray;
     list-style-type: none;
     text-align: center;
+    margin-block-start: 10px;
+    margin-block-end: 10px;
+
 }
 .book-list ul li{
     padding: 10px;
-    background-color: darkseagreen;
+    background-color: rgb(181, 204, 240);
+    border-radius: 20px;
 }
 
 .book-list button {

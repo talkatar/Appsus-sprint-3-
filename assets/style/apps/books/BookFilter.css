@@ -1,5 +1,19 @@
 .book-filter {
     padding: 10px;
     background-color: lightgray;
-    margin-block-start: 10px;
+    margin-block-start: 30px;
+    border-radius: 37px;
+    
+
+}
+
+.book-filter-input{
+    margin-inline-start: 40px;
+
+
+}
+
+.book-filter-range{
+    margin-inline-start: 30px;
+
 }

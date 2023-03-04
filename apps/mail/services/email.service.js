@@ -18,22 +18,12 @@ export const emailService = {
     save,
     getEmptyEmail,
     loggedinUser
-    // addReview,
-    // removeReview,
-    // addGoogleEmail
+    
 }
 
 function query(filterBy = {}) {
     return storageService.query(EMAIL_KEY)
         .then(emails => {
-            console.log(emails);
-            // if (filterBy.txt) {
-            //     const regex = new RegExp(filterBy.txt, 'i')
-            //     emails = emails.filter(email => regex.test(email.vendor))
-            // }
-            // if (filterBy.minSpeed) {
-            //     emails = emails.filter(email => email.maxSpeed >= filterBy.minSpeed)
-            // }
             return emails
         })
 }
@@ -41,7 +31,6 @@ function query(filterBy = {}) {
 
 function get(emailId) {
     return storageService.get(EMAIL_KEY, emailId)
-    // .then(_setNextPrevEmailId)
 }
 
 function remove(emailId) {
@@ -65,13 +54,13 @@ function _createEmails() {
 
         emails = [{
             id: 'e101',
-            nameSender: 'Amazon Business',
-            subject: 'Tal, save even more with a free Amazon Business account!',
-            body: 'you are receiving this email because you have a business-issued credit card in your Amazon account',
+            nameSender: 'Tinder',
+            subject: 'It is showtime!',
+            body: 'Show up in your photos with a smile and do not get lost in the group shot!',
             isRead: true,
-            sentAt: 1551133930594,
+            sentAt: 1677871421960,
             removedAt: null,
-            from: 'Amazon@Amazon.com',
+            from: 'noreply@gotinder.com',
             to: 'user@appsus.com',
             isStared: false,
             isDraft: false,
@@ -380,23 +369,11 @@ function _createEmails() {
 
 
         },
-
-        
-
-
-
-
-
-
-
-
         ]
 
         utilService.saveToStorage(EMAIL_KEY, emails)
     }
 }
-
-
 
 
 function getEmptyEmail() {
@@ -409,9 +386,10 @@ function getEmptyEmail() {
         sentAt: new Date(),
         removedAt: null,
         to: '',
+        isRead: true,
         isStared: false,
         isDraft: false,
-        isTrash:false,
+        isTrash: false,
         from: 'user@appsus.com',
 
     }

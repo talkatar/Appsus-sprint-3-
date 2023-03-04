@@ -26,31 +26,24 @@ export default {
                   <option value="unread">Unread Mails</option>
                 </select>
                 </div>
-            </section>
-                
-        
+                 </section>
         </section>
-
-       
-
     `
-
-    ,
-    data() {
+    ,data() {
         return {
             filterBy: { txt: '', isRead: null, sortOption: '' },
             isModalOpen: false
         }
-    },
-    methods: {
+    }
+
+    , methods: {
         filter() {
             this.$emit('filter', this.filterBy)
         }
 
-        , openModal() {
+        ,openModal() {
             if (this.isModalOpen) this.isModalOpen = false
             else this.isModalOpen = true
         }
-
     }
 }

@@ -6,40 +6,23 @@ import EmailFolderList from '../cmps/EmailFolderList.js'
 import EmailCompose from '../cmps/EmailCompose.js'
 import { eventBus, showErrorMsg, showSuccessMsg } from '../../../services/event-bus.service.js'
 
-
-
 export default {
     template: `
-    <!-- <div class="container"> -->
         <div class="flex">
-        <img class="logo" src='../../../assets/img/Gmail_Logo_64px.png'/>
-        <!-- <RouterLink to="/email"><img class="logo" src='../../../assets/img/Gmail_Logo_64px.png'/> </RouterLink> -->
+        <img class="logo" src='assets/img/Gmail_Logo_64px.png'/>
         <EmailFilter @filter="setFilterBy"/>
-
         </div>
         
-
-        
-        
-
         <div class="flex">
             <div>
             <RouterLink to="/email/compose" class="btn-compose"><i class="fa-sharp fa-solid fa-pen"></i><span>Compose</span></RouterLink>  
             <EmailFolderList @filterList="setFilterBy"  v-if="emails" :emails="filteredEmails" />
             </div>
        
-
         <EmailList :emails="filteredEmails" v-if="emails" @removeEmail="removeEmail"/>
         </div>
         <RouterView />
-
-
-        <!-- </div> -->
-
-
-
     `
-
     , data() {
         return {
             emails: null,
@@ -49,9 +32,7 @@ export default {
                 isRead: null,
                 isStared: true,
                 lables: ['important', 'romantic']
-
             },
-
         }
     }
 
@@ -60,12 +41,9 @@ export default {
             .then(emails => {
                 console.log(emails);
                 this.emails = emails
-                console.log(emails);
             })
-
         eventBus.on('sent', this.sent)
-        
-
+        eventBus.on('drat', this.drat)
     },
 
     methods: {
@@ -74,36 +52,27 @@ export default {
             const email = this.emails.find(email => email.id === emailId)
 
             if (email.isTrash) {
-                console.log('asd');
                 emailService.remove(emailId)
                     .then(() => {
-
                         const idx = this.emails.findIndex(email => email.id === emailId)
                         this.emails.splice(idx, 1)
                     })
                     .then(savedEmail => {
-                        showSuccessMsg('Conversation deleted forever.'
-                        )
+                        showSuccessMsg('Conversation deleted forever.')
                     })
                     .catch(err => {
                         showErrorMsg('Conversation deleted forever failed.')
                     })
-                // this.filteredEmails()
             }
             else {
                 email.isTrash = true
-                emailService.save(email).then(saveEmail =>{
+                emailService.save(email).then(saveEmail => {
                     showSuccessMsg('Conversation moved to Trash.')
                 })
-                // this.filteredEmails()
-
-                // .catch(err => {
-                //     showErrorMsg('Conversation moved to Trash failed.')})
             }
 
         },
         setFilterBy(filterBy) {
-
             if (filterBy.isRead) {
                 if (filterBy.isRead === 'read') {
                     this.filterBy.isRead = true
@@ -123,22 +92,25 @@ export default {
             if (filterBy.sortOption) {
                 this.filterBy.sortOption = filterBy.sortOption
             }
-        },
-        sent(email){
+        }
+        , sent(email) {
             emailService.save(email)
                 .then(sentEmail => {
                     this.emails.unshift(sentEmail)
                 })
         }
-
-    },
-
-    computed: {
+        , drat(email) {
+            emailService.save(email)
+                .then(sentEmail => {
+                    this.emails.unshift(sentEmail)
+                })
+        }
+    }
+    , computed: {
 
         filteredEmails() {
 
             let filteredEmails = this.emails
-
             const { txt, isRead, status, sortOption } = this.filterBy
 
             if (txt) {
@@ -153,18 +125,17 @@ export default {
 
             if (status) {
 
-
                 if (status === 'inbox') {
 
                     filteredEmails = filteredEmails.filter(email => email.to === emailService.loggedinUser.email && !email.isTrash)
                 }
 
                 if (status === 'sent') {
-                    filteredEmails = filteredEmails.filter(email => email.from === emailService.loggedinUser.email)
+                    filteredEmails = filteredEmails.filter(email => email.from === emailService.loggedinUser.email && !email.isTrash)
                 }
 
                 if (status === 'starred') {
-                    filteredEmails = filteredEmails.filter(email => email.isStared)
+                    filteredEmails = filteredEmails.filter(email => email.isStared && !email.isTrash)
                 }
 
                 if (status === 'trash') {
@@ -172,17 +143,14 @@ export default {
                 }
 
                 if (status === 'draft') {
-                    filteredEmails = filteredEmails.filter(email => email.isDraft)
+                    filteredEmails = filteredEmails.filter(email => email.isDraft && !email.isTrash)
                 }
             }
 
             if (sortOption) {
                 if (sortOption === 'date') {
                     filteredEmails = filteredEmails.sort((a, b) => b.sentAt - a.sentAt);
-
-
                 }
-
 
                 if (sortOption === 'title') {
                     filteredEmails = filteredEmails.sort((a, b) => b.subject.localeCompare(a.subject));
@@ -190,10 +158,7 @@ export default {
 
             }
             return filteredEmails
-
         },
-
-
     },
 
     components: {
@@ -203,20 +168,4 @@ export default {
         EmailCompose,
 
     }
-
-
-    // , watch: {
-    //     $route: {
-
-    //         oldValue: 'http://127.0.0.1:5501/index.html#/email',
-    //         newValue: 'http://127.0.0.1:5501/index.html#/email?reload',
-
-    //         handler(newValue, oldValue) {
-    //             console.log(newValue)
-    //             console.log(oldValue)
-    //         },
-    //         deep: true
-    //     }
-    // }
-
 }

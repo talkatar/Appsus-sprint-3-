@@ -1,6 +1,6 @@
 export default {
     template: `
-        <header class="app-header">
+        <header class="app-header-book">
             <RouterLink to="/bookadd">search google books</RouterLink>|
         </header>
     `,

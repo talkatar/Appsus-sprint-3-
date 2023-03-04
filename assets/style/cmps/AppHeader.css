@@ -3,14 +3,15 @@
   color: black;
   padding: 1em;
   border-radius: 20px;
-  border-radius: 37px;
-  font-size: 1.5em;
-  font-family: poppins;
+    border-radius: 37px;
+    font-size: 1.5em;
+    font-family: poppins;
+
 }
 
 .app-header h1 {
-  margin-inline-end: 16vw;
-}
+  margin-inline-end: 16vw;}
+
 
 .app-header div {
   display: flex;
@@ -22,7 +23,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 20px;
+  gap:20px;
 }
 
 .app-header img {
@@ -33,9 +34,9 @@
   display: inline-block;
   width: 80px;
 }
-
-.app-header a:hover {
+.app-header a:hover{
   scale: 1.2;
+
 }
 
 .app-header section {
@@ -44,12 +45,23 @@
   margin: 0;
 }
 
-.keep-logo-header {
-  scale: 0.85
+  /* .gmail-logo-header{
+    margin-block-end: 1vh;
+}  */
+
+.keep-logo-header{
+  scale:0.85
+
 }
 
-.app-logo {
-  background-color: blue;
+/* .book-logo-header{
+  scale:0.2
+
+}  */
+
+
+.app-logo{
+  background-color:blue;
   scale: 0.3;
 }
 

@@ -37,8 +37,6 @@ img, embed, video, object {
 
 
 /* tap targets: */
-<<<<<<< HEAD
-
 
 /* nav a, */
 
@@ -47,7 +45,7 @@ img, embed, video, object {
   min-width: 48px;
   min-height: 48px;
 } */
-=======
+
 /* nav a, */
 /* button {
   min-width: 48px;
@@ -58,4 +56,3 @@ img, embed, video, object {
 /* .debug * {
   outline: 1px solid gold
 } */
->>>>>>> 6bb491b62134da834bcc00f49e84d08cfc8ae519

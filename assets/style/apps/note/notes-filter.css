@@ -1,6 +1,7 @@
 .notes-filter {
-    height: 100vh;
+    height: 200vh;
     width:20vw;
+    max-width: 225px;
     margin: 0;
     padding: 0;
     background-color: lightgrey;

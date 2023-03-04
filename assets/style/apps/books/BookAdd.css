@@ -1,0 +1,25 @@
+.book-add {
+    margin-block: 1vh;
+    width: 20vw;
+    max-width: 250px;
+    min-width: 150px;
+    margin-inline: 30vw;
+}
+
+.g-book-list {
+    background-color: lightgreen;
+    text-align: center;
+}
+
+.g-book-list button {
+    border-radius: 15px;
+    cursor: pointer;
+    background-color: lightcoral;
+    margin: 5px;
+    border: none;
+}
+
+.g-book-list button:hover {
+    opacity: 0.5;
+    scale: 1.2;
+}

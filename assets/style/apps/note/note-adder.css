@@ -1,10 +1,16 @@
 .note-adder {
     display: flex;
-    flex-direction: column;
-    justify-content: right;
-    width: 40vw;
+    /* flex-direction: column; */
+    justify-content: space-evenly;
+    width: 60vw;
+    max-width: 450px;
+    border: 1px solid gray;
     /* height: 5vh; */
-    margin-inline: 30vw;
+    margin-inline-start: 10vw;
+}
+
+.note-adder h3 {
+    min-width: 50px;
 }
 
 .note-adder section{
@@ -18,6 +24,11 @@
     background-color: transparent;
 }
 
-.note-adder form {
+.note-adder button:hover {
+    scale: 1.2;
+    opacity: 0.5;
+}
 
+.note-adder input {
+    max-height: 3vh;
 }

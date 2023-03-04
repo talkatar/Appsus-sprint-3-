@@ -7,9 +7,10 @@ import NoteVideoEdit from "../cmps/NoteVideoEdit.js"
 
 export default {
     template: `
+        <div class="note-filler"></div>
         <form @submit.prevent="updateNote" class="note-details-modal">
             <Component :is="noteType" :note="note"/>
-            <button>update</button>
+            <button><i class="fa-solid fa-pen"></i></button>
             <RouterLink :to="'/keep'">back to list</RouterLink>
         </form>
     `,

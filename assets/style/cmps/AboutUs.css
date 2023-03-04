@@ -1,0 +1,23 @@
+.about-page {
+    background-color: #eae8e8;
+    border-radius: 37px;
+    padding-top: 10px;
+    padding-left: 20px;
+}
+
+.apps-des {
+    font-family: Poppins-Regular;
+}
+
+h1 {
+    font-size: 30px;
+    font-family: Poppins-SemiBold;
+}
+
+h2 {
+    font-size: 20px;
+}
+
+h3 {
+    font-size: 17px;
+}

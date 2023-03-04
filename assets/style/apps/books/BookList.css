@@ -1,0 +1,36 @@
+.book-list ul {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 10px;
+
+    padding: 30px;
+    background-color: lightblue;
+    list-style-type: none;
+    text-align: center;
+}
+.book-list ul li{
+    padding: 10px;
+    background-color: darkseagreen;
+}
+
+.book-list button {
+    background-color: transparent;
+    border: none;
+}
+
+.book-list button:hover {
+    scale: 1.2;
+    opacity: 0.5;
+}
+
+.book-list a:hover {
+    opacity: 0.5;
+}
+
+.book-list h2 {
+    overflow: hidden;
+}
+
+img:hover{
+    animation: swing 1000ms 200ms;
+}

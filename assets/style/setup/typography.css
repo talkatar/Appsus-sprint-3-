@@ -14,4 +14,14 @@
     src: url(/assets/style/fonts/roboto/Roboto-Regular.ttf);
 } 
 
+@font-face {
+    font-family: Poppins-Regular;
+    src: url(/assets/style/fonts/poppins/Poppins-Regular.ttf);
+} 
+
+
+@font-face {
+    font-family: Poppins-SemiBold;
+    src: url(/assets/style/fonts/poppins/Poppins-SemiBold.ttf);
+}
 

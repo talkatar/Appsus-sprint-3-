@@ -1,4 +1,6 @@
 .notes {
     display: flex;
     margin-block-start: 2vh;
+    font-family: 'Roboto-Regular';
+    padding-block: 1vh;
 }

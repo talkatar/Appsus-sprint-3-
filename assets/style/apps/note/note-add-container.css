@@ -1,0 +1,14 @@
+.note-add-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.note-add-container button {
+    border: none;
+    background-color: transparent;
+}
+
+.note-add-container.note-inputs {
+    
+}

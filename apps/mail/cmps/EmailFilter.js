@@ -14,7 +14,7 @@ export default {
                 <label class="sort-label" for="my-sort">Sort</label>
                 <select id="my-sort" class="sort-box " v-model="filterBy.sortOption" @change="filter" >
                 <option value="date">Date</option>
-                <option value="title">Title</option>
+                <option value="namesender">Sender</option>
                 </select>
                 </div>
 

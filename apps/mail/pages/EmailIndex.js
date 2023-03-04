@@ -152,8 +152,8 @@ export default {
                     filteredEmails = filteredEmails.sort((a, b) => b.sentAt - a.sentAt);
                 }
 
-                if (sortOption === 'title') {
-                    filteredEmails = filteredEmails.sort((a, b) => b.subject.localeCompare(a.subject));
+                if (sortOption === 'namesender') {
+                    filteredEmails = filteredEmails.sort((a, b) => a.nameSender.localeCompare(b.nameSender));
                 }
 
             }

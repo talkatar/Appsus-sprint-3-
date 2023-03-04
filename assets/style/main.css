@@ -39,6 +39,20 @@
 @import 'apps/note/notes.css';
 @import 'apps/note/note-page.css';
 @import 'apps/note/notes-filter.css';
+@import 'apps/note/note-add-container.css';
+
+@import 'apps/books/AppHeader.css';
+@import 'apps/books/BookIndex.css';
+@import 'cmps/AppFooter.css';
+@import 'apps/books/BookFilter.css';
+@import 'apps/books/BookList.css';
+@import 'apps/books/UserMsg.css';
+@import 'apps/books/BookReview.css';
+@import 'apps/books/BookPreview.css';
+@import 'apps/books/BookDetails.css';
+@import 'apps/books/BookEdit.css';
+@import 'apps/books/BookAdd.css';
+
 
 
 /* MEDIA QUERIS */

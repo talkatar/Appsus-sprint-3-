@@ -1,16 +1,12 @@
-
- .gmail-logo{
-margin-block-start: 10px;    
+.gmail-logo {
+    margin-block-start: 10px;
 }
- .keep-logo{
-    scale:0.85  
-} 
-/* .book-logo{
- scale:0.6;
-width: max-content;
-} */
 
-.links{
+.keep-logo {
+    scale: 0.85
+}
+
+.links {
     background-image: url('../../img/cover2.jpg');
     background-size: cover;
     border-radius: 37px;
@@ -18,7 +14,7 @@ width: max-content;
     height: 72vh;
     display: flex;
     flex-wrap: wrap;
-    gap:80px;
+    gap: 80px;
     justify-content: center;
     align-content: space-around
 }
@@ -33,6 +29,6 @@ width: max-content;
     scale: 1.2;
 }
 
-.links img{
+.links img {
     width: 100%;
 }

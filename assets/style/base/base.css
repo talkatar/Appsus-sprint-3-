@@ -2,9 +2,7 @@
   box-sizing: border-box;
 }
 
-html {
-  
-}
+html {}
 
 body {
   display: flex;
@@ -13,15 +11,13 @@ body {
   font-family: Roboto-Regular;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
+h1, h2, h3, h4, h5,
 /* h6 {
   margin: 0 0 1em;
   font-family: 'Edu VIC WA NT Beginner', cursive;
 } */
+
+
 /* 
 p {
   margin: 0 0 1em;
@@ -33,16 +29,25 @@ a {
 }
 
 
-
 /* Dont stretch my Media */
-img,
-embed,
-video,
-object {
+
+img, embed, video, object {
   max-width: 100%
 }
 
+
 /* tap targets: */
+<<<<<<< HEAD
+
+
+/* nav a, */
+
+
+/* button {
+  min-width: 48px;
+  min-height: 48px;
+} */
+=======
 /* nav a, */
 /* button {
   min-width: 48px;
@@ -53,3 +58,4 @@ object {
 /* .debug * {
   outline: 1px solid gold
 } */
+>>>>>>> 6bb491b62134da834bcc00f49e84d08cfc8ae519

@@ -4,23 +4,23 @@
 
 @font-face {
     font-family: Roboto-Bold;
-    src: url(/assets/style/fonts/roboto/Roboto-Bold.ttf);
+    src: url(assets/style/fonts/roboto/Roboto-Bold.ttf);
 } 
 
 
 
 @font-face {
     font-family: Roboto-Regular;
-    src: url(/assets/style/fonts/roboto/Roboto-Regular.ttf);
+    src: url(assets/style/fonts/roboto/Roboto-Regular.ttf);
 } 
 
 @font-face {
     font-family: Poppins-Regular;
-    src: url(/assets/style/fonts/poppins/Poppins-Regular.ttf);
+    src: url(assets/style/fonts/poppins/Poppins-Regular.ttf);
 } 
 
 
 @font-face {
     font-family: Poppins-SemiBold;
-    src: url(/assets/style/fonts/poppins/Poppins-SemiBold.ttf);
+    src: url(assets/style/fonts/poppins/Poppins-SemiBold.ttf);
 }

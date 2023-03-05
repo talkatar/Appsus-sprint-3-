@@ -54,7 +54,8 @@
   font-size: 12px;
   position: absolute;
   z-index: 1;
-  left: 60px
+  left: 60px;
+  bottom:5px
 }
 
 .btn-inbox[Inbox]::after {
